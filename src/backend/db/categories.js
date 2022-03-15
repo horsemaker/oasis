@@ -1,27 +1,16 @@
 import { v4 as uuid } from "uuid";
 
-/**
- * Category Database can be added here.
- * You can add category of your wish with different attributes
- * */
-
 export const categories = [
   {
     _id: uuid(),
-    categoryName: "fiction",
+    categoryName: "Air-Purifying",
     description:
-      "literature in the form of prose, especially novels, that describes imaginary events and people",
+      "Air-Purifying plants are a package of benefits. Planting them is the most cost-effective and healthy way to breathe pure and better air. It also helps improve the atmosphere and productivity around you.",
   },
   {
     _id: uuid(),
-    categoryName: "non-fiction",
+    categoryName: "Pet-Friendly",
     description:
-      "Non-fiction is writing that gives information or describes real events, rather than telling a story.",
-  },
-  {
-    _id: uuid(),
-    categoryName: "horror",
-    description:
-      "Meant to cause discomfort and fear for both the character and readers, horror writers often make use of supernatural and paranormal elements in morbid stories that are sometimes a little too realistic.",
+      "Plants and pets are two things that we adore in life. Unfortunately, many common plants are toxic to cats and dogs. During play sessions, cats and dogs may chew on houseplants as if they were a toy. We have brought you pet-friendly plants to help you solve this problem.",
   },
 ];
