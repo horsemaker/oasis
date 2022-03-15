@@ -13,6 +13,16 @@ function ResponsiveNavbar() {
           className={({ isActive }) =>
             isActive ? "navbar-link-active" : "navbar-link"
           }
+          to="/signin"
+        >
+          Sign In
+        </NavLink>
+      </li>
+      <li onClick={toggleNavbar}>
+        <NavLink
+          className={({ isActive }) =>
+            isActive ? "navbar-link-active" : "navbar-link"
+          }
           to="/"
         >
           Home
