@@ -1,6 +1,7 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Oasis",
+  "name": "Oasis | E-commerce for plants. 🪴",
+  "description": "Oasis is your friendly neighborhood online nursery. We know that there’s just something magical about owning and caring for plants. We're here to bring your oasis to your doorstep.",
   "icons": [
     {
       "src": "favicon.ico",
@@ -18,8 +19,8 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": ".",
+  "start_url": "/",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#111111",
+  "background_color": "#fafafa"
 }
