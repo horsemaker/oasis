@@ -4,11 +4,11 @@ import { useNavbar } from "../../contexts/navbar-context";
 import "./ResponsiveNavbar.css";
 
 function ResponsiveNavbar() {
-  const { showNavbar } = useNavbar();
+  const { showNavbar, toggleNavbar } = useNavbar();
 
   return showNavbar ? (
     <ul class="navbar-responsive-links">
-      <li>
+      <li onClick={toggleNavbar}>
         <NavLink
           className={({ isActive }) =>
             isActive ? "navbar-link-active" : "navbar-link"
@@ -18,7 +18,7 @@ function ResponsiveNavbar() {
           Home
         </NavLink>
       </li>
-      <li>
+      <li onClick={toggleNavbar}>
         <NavLink
           className={({ isActive }) =>
             isActive ? "navbar-link-active" : "navbar-link"
@@ -28,7 +28,7 @@ function ResponsiveNavbar() {
           Products
         </NavLink>
       </li>
-      <li>
+      <li onClick={toggleNavbar}>
         <NavLink
           className={({ isActive }) =>
             isActive ? "navbar-link-active" : "navbar-link"
@@ -38,7 +38,7 @@ function ResponsiveNavbar() {
           Wishlist
         </NavLink>
       </li>
-      <li>
+      <li onClick={toggleNavbar}>
         <NavLink
           className={({ isActive }) =>
             isActive ? "navbar-link-active" : "navbar-link"
