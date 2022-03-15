@@ -1,0 +1,28 @@
+.navbar-responsive-links {
+  display: none;
+}
+
+@media screen and (max-width: 786px) {
+  .navbar-responsive-links {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.25rem;
+    color: var(--color-accents-three);
+    font-weight: var(--bold);
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    position: fixed;
+    list-style: none;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: var(--color-background);
+    z-index: 2;
+  }
+
+  .overflowY-hidden {
+    overflow-y: hidden;
+  }
+}
