@@ -4,7 +4,7 @@ import { useNavbar } from "../../contexts/navbar-context";
 import "./Navbar.css";
 
 function Navbar() {
-  const { toggleNavbar } = useNavbar();
+  const { showNavbar, toggleNavbar } = useNavbar();
 
   return (
     <header className="header">
@@ -14,7 +14,7 @@ function Navbar() {
             className="material-icons navbar-menu-icon"
             onClick={toggleNavbar}
           >
-            menu
+            {showNavbar ? "close" : "menu"}
           </span>
           <NavLink to="/">
             <img
