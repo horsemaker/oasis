@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { useNavbar } from "../../contexts/navbar-context";
+import { useNavbar } from "../../contexts";
 import "./Navbar.css";
 
 function Navbar() {
