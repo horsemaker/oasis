@@ -1,0 +1,145 @@
+.header {
+  background-color: var(--color-background);
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  padding: 4px var(--24-px);
+  color: var(--color-accents-three);
+  font-weight: var(--medium);
+  z-index: 3;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.navbar-menu-icon {
+  display: none;
+  cursor: pointer;
+  user-select: none;
+}
+
+.brand-logo {
+  width: 10rem;
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  font-size: 1.25rem;
+  font-weight: var(--bold);
+}
+
+.navbar-link:hover {
+  color: var(--green-one-600);
+}
+
+.navbar-link-active {
+  color: var(--green-one-600);
+}
+
+.navbar-link-active:hover {
+  color: var(--green-one-700);
+}
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--16-px);
+  color: var(--green-one-600);
+}
+
+.navbar-action {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-action:hover {
+  color: var(--green-one-700);
+}
+
+.navbar-icon {
+  font-size: var(--28-px);
+}
+
+.dropdown-content {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  border-color: var(--green-one-500);
+  padding: 0;
+  display: none;
+  top: 105%;
+  left: -100%;
+  position: absolute;
+  text-align: center;
+  font-weight: var(--semi-bold);
+  width: max-content;
+}
+
+.dropdown-content > li {
+  border-color: var(--green-one-500);
+}
+
+.dropdown-content > li:first-child {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.dropdown-content > li:last-child {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.dropdown-content > li:hover {
+  color: var(--green-one-700);
+}
+
+.navbar-action:hover .dropdown-content {
+  display: block;
+}
+
+.badge {
+  display: flex;
+  align-items: center;
+}
+
+.badge-content {
+  font-size: 10px;
+  color: var(--color-background);
+}
+
+.badge-color {
+  background-color: var(--color-foreground);
+}
+
+@media screen and (max-width: 786px) {
+  .navbar {
+    justify-content: space-between;
+  }
+
+  .navbar-action:nth-child(3) {
+    display: none;
+  }
+
+  .navbar-links {
+    display: none;
+  }
+
+  .navbar-menu-icon {
+    display: block;
+    font-size: 2rem;
+  }
+}

@@ -1,0 +1,94 @@
+/* Font Family - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+/* Font Family - Poppins */
+
+/* Horsemaker UI Main CSS */
+@import url("https://horsemaker-ui.netlify.app/stylesheets/main.css");
+/* Horsemaker UI Main CSS */
+
+/* Horsemaker UI Resset CSS */
+@import url("https://horsemaker-ui.netlify.app/stylesheets/reset.css");
+/* Horsemaker UI Resset CSS */
+
+/* Root Variables */
+:root {
+  /* Colors */
+  --color-foreground: #111111;
+  --color-accents-one: #292929;
+  --color-accents-two: #464646;
+  --color-accents-three: #646464;
+  --color-accents-four: #818181;
+  --color-accents-five: #9e9e9e;
+  --color-accents-six: #dcdcdc;
+  --color-background: #fafafa;
+  /* Colors */
+
+  /* Greens */
+  --green-one-700: #659e38;
+  --green-one-600: #70aa42;
+  --green-one-500: #86bc5c;
+  --green-one-400: #9dce77;
+  --green-one-300: #bbdf9e;
+  --green-one-200: #daf2c6;
+  --green-one-100: #f3faed;
+
+  --green-two-700: #8c9d3d;
+  --green-two-600: #a2b255;
+  --green-two-500: #b5c56a;
+  --green-two-400: #cddb8c;
+  --green-two-300: #e1ebb1;
+  --green-two-200: #f3fad4;
+  --green-two-100: #fdfff2;
+  /* Greens */
+
+  /* Teal */
+  --teal: #0d9488;
+  /* Teal */
+
+  --footer-bg: #222222;
+
+  /* Utilities */
+  /* Sizes */
+  --12-px: 0.75rem;
+  --14-px: 0.875rem;
+  --16-px: 1rem;
+  --22-px: 1.375rem;
+  --24-px: 1.5rem;
+  --28-px: 1.75rem;
+  --32-px: 2rem;
+  --40-px: 2.5rem;
+  --42-px: 2.625rem;
+  --48-px: 3rem;
+  --56-px: 3.5rem;
+  --60-px: 3.75rem;
+  /* Sizes */
+
+  /* Weights */
+  --thin: 100;
+  --extra-light: 200;
+  --light: 300;
+  --regular: 400;
+  --medium: 500;
+  --semi-bold: 600;
+  --bold: 700;
+  --extra-bold: 800;
+  --black: 900;
+  /* Weights */
+
+  /* Box Shadow */
+  --box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  /* Box Shadow */
+  /* Utilities */
+}
+/* Root Variables */
+
+/* app body */
+.app {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
+}
+/* app body */
