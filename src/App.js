@@ -1,7 +1,7 @@
 import "./App.css";
 import { Footer, Navbar, ResponsiveNavbar } from "./frontend/components";
 import { useNavbar } from "./frontend/contexts";
-import { NavRoutes } from "./frontend/routes";
+import { Router } from "./frontend/routes/Router";
 
 function App() {
   const { showNavbar } = useNavbar();
@@ -11,7 +11,7 @@ function App() {
     <div className={appClassName}>
       <Navbar />
       <ResponsiveNavbar />
-      <NavRoutes />
+      <Router />
       <Footer />
     </div>
   );
