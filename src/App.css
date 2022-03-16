@@ -82,15 +82,59 @@
 }
 /* Root Variables */
 
+.logo {
+  width: 7.5rem;
+}
+
+/* Typeface */
+.h1-48 {
+  font-size: var(--48-px);
+}
+
+.h1-60 {
+  font-size: var(--60-px);
+}
+
+.h2 {
+  font-size: var(--32-px);
+}
+
+.h3 {
+  font-size: var(--28-px);
+}
+
+.p {
+  font-size: var(--14-px);
+}
+/* Typeface */
+
 /* app body */
 .app {
-  background-color: var(--color-background);
+  background: var(--color-background);
   color: var(--color-foreground);
   font-family: "Poppins", sans-serif;
   overflow-x: hidden;
   position: relative;
+  z-index: 0;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 /* app body */
+
+/* Highlight */
+.hl-green {
+  color: var(--green-one-700);
+}
+/* Highlight */
+
+/* Buttons */
+.btn {
+  max-width: max-content;
+}
+
+.btn-teal {
+  background-color: var(--teal);
+  color: var(--color-background);
+}
+/* Buttons */
