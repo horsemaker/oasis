@@ -41,6 +41,10 @@
   font-weight: var(--bold);
 }
 
+.navbar-link {
+  color: var(--color-accents-three);
+}
+
 .navbar-link:hover {
   color: var(--green-one-600);
 }
