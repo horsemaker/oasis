@@ -9,7 +9,7 @@ import {
   SignUpScreen,
   WishlistScreen,
 } from "./frontend/screens";
-import { Navbar, ResponsiveNavbar } from "./frontend/components";
+import { Footer, Navbar, ResponsiveNavbar } from "./frontend/components";
 import { useNavbar } from "./frontend/contexts";
 
 function App() {
@@ -29,6 +29,7 @@ function App() {
         <Route path="/signin" element={<SignInScreen />} />
         <Route path="/signup" element={<SignUpScreen />} />
       </Routes>
+      <Footer />
     </div>
   );
 }
