@@ -10,7 +10,7 @@ import {
   WishlistScreen,
 } from "../screens";
 
-const NavRoutes = () => {
+const Router = () => {
   return (
     <Routes>
       <Route path="/" element={<HomeScreen />} />
@@ -24,4 +24,4 @@ const NavRoutes = () => {
   );
 };
 
-export { NavRoutes };
+export { Router };
