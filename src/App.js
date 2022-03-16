@@ -1,15 +1,16 @@
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
-import Header from "./frontend/components/Navbar/Navbar";
-import ResponsiveNavbar from "./frontend/components/ResponsiveNavbar/ResponsiveNavbar";
-import HomeScreen from "./frontend/screens/HomeScreen/HomeScreen";
-import AboutUsScreen from "./frontend/screens/AboutUsScreen/AboutUsScreen";
-import ProductsScreen from "./frontend/screens/ProductsScreen/ProductsScreen";
-import CartScreen from "./frontend/screens/CartScreen/CartScreen";
-import WishlistScreen from "./frontend/screens/WishlistScreen/WishlistScreen";
-import SignInScreen from "./frontend/screens/SignInScreen/SignInScreen";
-import SignUpScreen from "./frontend/screens/SignUpScreen/SignUpScreen";
-import { useNavbar } from "./frontend/contexts/navbar-context";
+import {
+  AboutUsScreen,
+  CartScreen,
+  HomeScreen,
+  ProductsScreen,
+  SignInScreen,
+  SignUpScreen,
+  WishlistScreen,
+} from "./frontend/screens";
+import { Navbar, ResponsiveNavbar } from "./frontend/components";
+import { useNavbar } from "./frontend/contexts";
 
 function App() {
   const { showNavbar } = useNavbar();
@@ -17,7 +18,7 @@ function App() {
 
   return (
     <div className={appClassName}>
-      <Header />
+      <Navbar />
       <ResponsiveNavbar />
       <Routes>
         <Route path="/" element={<HomeScreen />} />

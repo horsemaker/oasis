@@ -4,4 +4,4 @@ function WishlistScreen() {
   return <div>WishlistScreen</div>;
 }
 
-export default WishlistScreen;
+export { WishlistScreen };

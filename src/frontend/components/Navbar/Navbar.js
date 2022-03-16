@@ -41,7 +41,7 @@ function Navbar() {
                 className={({ isActive }) =>
                   isActive ? "navbar-link-active" : "navbar-link"
                 }
-                to="/about"
+                to="/aboutus"
               >
                 About Us
               </NavLink>
@@ -80,10 +80,24 @@ function Navbar() {
             <span className="material-icons navbar-icon">perm_identity</span>
             <ul className="dropdown-content list-simple list-cursor-pointer list-style-none">
               <li>
-                <NavLink to="/signin">Sign In</NavLink>
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive ? "navbar-link-active" : "navbar-link"
+                  }
+                  to="/signin"
+                >
+                  Sign In
+                </NavLink>
               </li>
               <li>
-                <NavLink to="/wishlist">Wishlist</NavLink>
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive ? "navbar-link-active" : "navbar-link"
+                  }
+                  to="/wishlist"
+                >
+                  Wishlist
+                </NavLink>
               </li>
             </ul>
           </span>
@@ -93,4 +107,4 @@ function Navbar() {
   );
 }
 
-export default Navbar;
+export { Navbar };

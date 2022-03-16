@@ -4,4 +4,4 @@ function AboutUsScreen() {
   return <div>AboutUsScreen</div>;
 }
 
-export default AboutUsScreen;
+export { AboutUsScreen };

@@ -4,4 +4,4 @@ function ProductsScreen() {
   return <div>ProductsScreen</div>;
 }
 
-export default ProductsScreen;
+export { ProductsScreen };

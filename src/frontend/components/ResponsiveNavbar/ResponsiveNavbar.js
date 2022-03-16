@@ -64,4 +64,4 @@ function ResponsiveNavbar() {
   );
 }
 
-export default ResponsiveNavbar;
+export { ResponsiveNavbar };
