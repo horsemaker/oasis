@@ -4,7 +4,7 @@ import "./Footer.css";
 
 const Footer = () => {
   return (
-    <footer classNameName="footer">
+    <footer className="footer">
       <div className="footer-brand">
         <Link to="/">
           <img
