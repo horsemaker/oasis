@@ -21,8 +21,7 @@ export const products = [
       "assets/Products/Aloe/photo-1.webp",
       "assets/Products/Aloe/photo-2.webp",
     ],
-    quantity: 10,
-    inStock: true,
+    inStock: 10,
   },
   {
     _id: uuid(),
@@ -44,8 +43,7 @@ export const products = [
       "assets/Products/ZZ-Plant/photo-1.webp",
       "assets/Products/ZZ-Plant/photo-2.webp",
     ],
-    quantity: 10,
-    inStock: true,
+    inStock: 8,
   },
   {
     _id: uuid(),
@@ -67,8 +65,7 @@ export const products = [
       "assets/Products/Snake-Plant/photo-1.webp",
       "assets/Products/Snake-Plant/photo-2.webp",
     ],
-    quantity: 10,
-    inStock: true,
+    inStock: 10,
   },
   {
     _id: uuid(),
@@ -90,8 +87,7 @@ export const products = [
       "assets/Products/Peace-Lily/photo-1.webp",
       "assets/Products/Peace-Lily/photo-2.webp",
     ],
-    quantity: 10,
-    inStock: true,
+    inStock: 10,
   },
   {
     _id: uuid(),
@@ -113,8 +109,7 @@ export const products = [
       "assets/Products/Monstera/photo-1.webp",
       "assets/Products/Monstera/photo-2.webp",
     ],
-    quantity: 10,
-    inStock: true,
+    inStock: 7,
   },
   {
     _id: uuid(),
@@ -136,8 +131,7 @@ export const products = [
       "assets/Products/Rubber-Tree/photo-1.webp",
       "assets/Products/Rubber-Tree/photo-2.webp",
     ],
-    quantity: 10,
-    inStock: true,
+    inStock: 8,
   },
   {
     _id: uuid(),
@@ -159,8 +153,7 @@ export const products = [
       "assets/Products/Jade/photo-1.webp",
       "assets/Products/Jade/photo-2.webp",
     ],
-    quantity: 10,
-    inStock: true,
+    inStock: 10,
   },
 
   {
@@ -183,8 +176,7 @@ export const products = [
       "assets/Products/Song-of-India/photo-1.webp",
       "assets/Products/Song-of-India/photo-2.webp",
     ],
-    quantity: 10,
-    inStock: true,
+    inStock: 10,
   },
 
   {
@@ -207,8 +199,7 @@ export const products = [
       "assets/Products/Palm/photo-1.webp",
       "assets/Products/Palm/photo-2.webp",
     ],
-    quantity: 10,
-    inStock: true,
+    inStock: 8,
   },
   {
     _id: uuid(),
@@ -230,8 +221,7 @@ export const products = [
       "assets/Products/Banana/photo-1.webp",
       "assets/Products/Banana/photo-2.webp",
     ],
-    quantity: 10,
-    inStock: true,
+    inStock: 10,
   },
 
   {
@@ -254,8 +244,7 @@ export const products = [
       "assets/Products/Rubber-Tree/photo-1.webp",
       "assets/Products/Rubber-Tree/photo-2.webp",
     ],
-    quantity: 10,
-    inStock: true,
+    inStock: 10,
   },
   {
     _id: uuid(),
@@ -277,8 +266,7 @@ export const products = [
       "assets/Products/Aurora/photo-1.webp",
       "assets/Products/Aurora/photo-2.webp",
     ],
-    quantity: 10,
-    inStock: true,
+    inStock: 8,
   },
   {
     _id: uuid(),
@@ -300,8 +288,7 @@ export const products = [
       "assets/Products/Fiddle-Leaf-Fig/photo-1.webp",
       "assets/Products/Fiddle-Leaf-Fig/photo-2.webp",
     ],
-    quantity: 10,
-    inStock: true,
+    inStock: 8,
   },
   {
     _id: uuid(),
@@ -323,8 +310,7 @@ export const products = [
       "assets/Products/Devil's-Ivy/photo-1.webp",
       "assets/Products/Devil's-Ivy/photo-2.webp",
     ],
-    quantity: 10,
-    inStock: true,
+    inStock: 10,
   },
   {
     _id: uuid(),
@@ -346,8 +332,7 @@ export const products = [
       "assets/Products/Peperomia/photo-1.webp",
       "assets/Products/Peperomia/photo-2.webp",
     ],
-    quantity: 10,
-    inStock: true,
+    inStock: 8,
   },
   {
     _id: uuid(),
@@ -369,8 +354,7 @@ export const products = [
       "assets/Products/Blue-Star-Fern/photo-1.webp",
       "assets/Products/Blue-Star-Fern/photo-2.webp",
     ],
-    quantity: 10,
-    inStock: true,
+    inStock: 8,
   },
   {
     _id: uuid(),
@@ -392,8 +376,7 @@ export const products = [
       "assets/Products/Yucca/photo-1.webp",
       "assets/Products/Yucca/photo-2.webp",
     ],
-    quantity: 10,
-    inStock: true,
+    inStock: 5,
   },
   {
     _id: uuid(),
@@ -415,8 +398,7 @@ export const products = [
       "assets/Products/Pilea/phto-1.webp",
       "assets/Products/Pilea/photo-2.webp",
     ],
-    quantity: 10,
-    inStock: true,
+    inStock: 8,
   },
   {
     _id: uuid(),
@@ -438,8 +420,7 @@ export const products = [
       "assets/Products/Dracaena/photo-1.webp",
       "assets/Products/Dracaena/photo-2.webp",
     ],
-    quantity: 10,
-    inStock: true,
+    inStock: 10,
   },
   {
     _id: uuid(),
@@ -461,8 +442,7 @@ export const products = [
       "assets/Products/Dragon-Tree/photo-1.webp",
       "assets/Products/Dragon-Tree/photo-2.webp",
     ],
-    quantity: 10,
-    inStock: true,
+    inStock: 8,
   },
   {
     _id: uuid(),
@@ -484,8 +464,7 @@ export const products = [
       "assets/Products/Croton-Petra/photo-1.webp",
       "assets/Products/Croton-Petra/photo-2.webp",
     ],
-    quantity: 10,
-    inStock: true,
+    inStock: 7,
   },
   {
     _id: uuid(),
@@ -507,8 +486,7 @@ export const products = [
       "assets/Products/Bird's-Nest-Fern/photo-1.webp",
       "assets/Products/Bird's-Nest-Fern/photo-2.webp",
     ],
-    quantity: 10,
-    inStock: true,
+    inStock: 8,
   },
   {
     _id: uuid(),
@@ -530,7 +508,6 @@ export const products = [
       "assets/Products/Zebra-Plant/photo-1.webp",
       "assets/Products/Zebra-Plant/photo-2.webp",
     ],
-    quantity: 10,
-    inStock: true,
+    inStock: 10,
   },
 ];
