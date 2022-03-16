@@ -4,11 +4,11 @@ import "./Footer.css";
 
 const Footer = () => {
   return (
-    <footer class="footer">
-      <div class="footer-brand">
+    <footer classNameName="footer">
+      <div className="footer-brand">
         <Link to="/">
           <img
-            class="brand-logo"
+            className="brand-logo"
             src="assets/Oasis/Logos/oasis-logo-white.svg"
             alt="Oasis"
           />
@@ -16,26 +16,26 @@ const Footer = () => {
         <p>
           <span>Copyright &copy; 2022 Oasis</span>
           <span>All rights reserved</span>
-          <span class="footer-icons">
+          <span className="footer-icons">
             <a href="https://www.instagram.com/horsemaker_/">
-              <i class="fa-brands fa-instagram footer-icon"></i>
+              <i className="fa-brands fa-instagram footer-icon"></i>
             </a>
             <a href="https://www.linkedin.com/in/yashghodekar/">
-              <i class="fa-brands fa-linkedin-in footer-icon"></i>
+              <i className="fa-brands fa-linkedin-in footer-icon"></i>
             </a>
             <a href="https://www.doglapan.com/">
-              <i class="fa-brands fa-facebook-f footer-icon"></i>
+              <i className="fa-brands fa-facebook-f footer-icon"></i>
             </a>
             <a href="https://github.com/horsemaker/oasis">
-              <i class="fa-brands fa-github footer-icon"></i>
+              <i className="fa-brands fa-github footer-icon"></i>
             </a>
           </span>
         </p>
       </div>
-      <div class="footer-actions">
-        <div class="footer-action footer-sitemap">
-          <h6 class="footer-title">Sitemap</h6>
-          <ul class="footer-list list-style-none list-spaced">
+      <div className="footer-actions">
+        <div className="footer-action footer-sitemap">
+          <h6 className="footer-title">Sitemap</h6>
+          <ul className="footer-list list-style-none list-spaced">
             <li>
               <Link to="/">Home</Link>
             </li>
@@ -50,9 +50,9 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-        <div class="footer-action footer-informative">
-          <h6 class="footer-title">Informative</h6>
-          <ul class="footer-list list-style-none list-spaced">
+        <div className="footer-action footer-informative">
+          <h6 className="footer-title">Informative</h6>
+          <ul className="footer-list list-style-none list-spaced">
             <li>
               <Link to="/">FAQ</Link>
             </li>
@@ -61,11 +61,11 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-        <div class="footer-action footer-subscribe">
-          <h6 class="footer-title">Subscribe</h6>
-          <div class="input-group input-email">
+        <div className="footer-action footer-subscribe">
+          <h6 className="footer-title">Subscribe</h6>
+          <div className="input-group input-email">
             <input
-              class="input"
+              className="input"
               type="email"
               name="email"
               id="email"

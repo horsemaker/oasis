@@ -7,7 +7,7 @@ function ResponsiveNavbar() {
   const { showNavbar, toggleNavbar } = useNavbar();
 
   return showNavbar ? (
-    <ul class="navbar-responsive-links">
+    <ul className="navbar-responsive-links">
       <li onClick={toggleNavbar}>
         <NavLink
           className={({ isActive }) =>
