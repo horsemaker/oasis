@@ -53,7 +53,7 @@ function ResponsiveNavbar() {
           className={({ isActive }) =>
             isActive ? "navbar-link-active" : "navbar-link"
           }
-          to="/aboutus"
+          to="/about"
         >
           About Us
         </NavLink>

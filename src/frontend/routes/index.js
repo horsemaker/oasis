@@ -14,7 +14,7 @@ const NavRoutes = () => {
   return (
     <Routes>
       <Route path="/" element={<HomeScreen />} />
-      <Route path="/aboutus" element={<AboutUsScreen />} />
+      <Route path="/about" element={<AboutUsScreen />} />
       <Route path="/products" element={<ProductsScreen />} />
       <Route path="/cart" element={<CartScreen />} />
       <Route path="/wishlist" element={<WishlistScreen />} />
