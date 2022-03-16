@@ -1,13 +1,3 @@
-.main-page {
-  margin-top: 7.5rem;
-  margin-bottom: 4rem;
-  scroll-margin-top: 7.5rem;
-  padding: 0 5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
-}
-
 .floating-img-div {
   width: 6rem;
   position: absolute;

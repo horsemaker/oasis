@@ -4,7 +4,7 @@ import { Banner } from "../../components";
 
 function HomeScreen() {
   return (
-    <div className="main-page">
+    <div>
       <Banner />
     </div>
   );
