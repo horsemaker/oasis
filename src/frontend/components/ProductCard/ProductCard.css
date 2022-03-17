@@ -1,0 +1,46 @@
+.card {
+  background-color: #fefefe;
+  border: none;
+  cursor: pointer;
+  box-shadow: #63636333 0px 2px 8px 0px;
+}
+
+.card-media {
+  border: none;
+}
+
+.card-subtitle {
+  color: black;
+  font-weight: var(--semi-bold);
+}
+
+.card-actions {
+  margin-top: auto;
+}
+
+.card-badge {
+  font-weight: var(--semi-bold);
+}
+
+.card-badge.bestseller {
+  background: var(--green-one-300);
+}
+
+.card-badge.trending {
+  background-color: var(--green-two-400);
+}
+
+.card-price {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.card-price-original {
+  text-decoration: line-through;
+}
+
+.card-discount {
+  color: var(--teal);
+  font-weight: var(--semi-bold);
+}
