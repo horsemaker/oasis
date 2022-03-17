@@ -1,0 +1,26 @@
+.products-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.products-section > h1 {
+  padding: 0.25rem 0;
+  border-radius: 5px;
+  text-align: center;
+  width: 100%;
+  background-color: var(--green-one-200);
+}
+
+.products {
+  display: flex;
+  gap: 2rem;
+}
+
+@media screen and (max-width: 985px) {
+  .products {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
