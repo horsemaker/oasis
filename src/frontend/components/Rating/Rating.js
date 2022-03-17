@@ -2,7 +2,6 @@ import React from "react";
 import "./Rating.css";
 
 const Rating = ({ rating }) => {
-  console.log(rating);
   return (
     <div className="ratings">
       <span className="material-icons rating-icon">

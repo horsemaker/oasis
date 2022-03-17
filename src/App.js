@@ -6,7 +6,6 @@ function App() {
   return (
     <div className="app">
       <Navbar />
-      {/* <ResponsiveNavbar /> */}
       <Router />
       <Footer />
     </div>
