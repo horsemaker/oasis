@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter } from "react-router-dom";
 import App from "./App";
-import { NavbarProvider } from "./frontend/contexts/navbar-context";
+import { NavbarProvider, ProductsProvider } from "./frontend/contexts";
 import { makeServer } from "./server";
 
 // Call make Server
@@ -12,7 +12,9 @@ ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <NavbarProvider>
-        <App />
+        <ProductsProvider>
+          <App />
+        </ProductsProvider>
       </NavbarProvider>
     </BrowserRouter>
   </React.StrictMode>,
