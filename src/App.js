@@ -1,16 +1,12 @@
 import "./App.css";
-import { Footer, Navbar, ResponsiveNavbar } from "./frontend/components";
-import { useNavbar } from "./frontend/contexts";
+import { Footer, Navbar } from "./frontend/components";
 import { Router } from "./frontend/routes/Router";
 
 function App() {
-  const { showNavbar } = useNavbar();
-  const appClassName = `app${showNavbar ? " overflowY-hidden" : ""}`;
-
   return (
-    <div className={appClassName}>
+    <div className="app">
       <Navbar />
-      <ResponsiveNavbar />
+      {/* <ResponsiveNavbar /> */}
       <Router />
       <Footer />
     </div>
