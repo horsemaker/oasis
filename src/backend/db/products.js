@@ -395,7 +395,7 @@ export const products = [
     isBestseller: false,
     isTrending: false,
     images: [
-      "assets/Products/Pilea/phto-1.webp",
+      "assets/Products/Pilea/photo-1.webp",
       "assets/Products/Pilea/photo-2.webp",
     ],
     inStock: 8,
