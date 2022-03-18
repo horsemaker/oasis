@@ -7,32 +7,9 @@ const ProductsSection = ({ children, products }) => {
     <div className="products-section">
       <h1 className="h1-60">{children}</h1>
       <div className="products-carousel">
-        {products.map(
-          ({
-            _id,
-            name,
-            originalPrice,
-            discount,
-            discountedPrice,
-            rating,
-            images,
-            isBestseller,
-            isTrending,
-          }) => (
-            <ProductCard
-              key={_id}
-              _id={_id}
-              name={name}
-              originalPrice={originalPrice}
-              discount={discount}
-              discountedPrice={discountedPrice}
-              rating={rating}
-              images={images}
-              isBestSeller={isBestseller}
-              isTrending={isTrending}
-            />
-          )
-        )}
+        {products.map((product) => (
+          <ProductCard key={product._id} product={product} />
+        ))}
       </div>
     </div>
   );

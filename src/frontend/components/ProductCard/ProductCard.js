@@ -1,23 +1,26 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
 import { Rating } from "../Rating/Rating";
 import "./ProductCard.css";
 
-const ProductCard = ({
-  _id,
-  name,
-  originalPrice,
-  discount,
-  discountedPrice,
-  rating,
-  images,
-  isBestSeller,
-  isTrending,
-  isProductListingCard = false,
-}) => {
+const ProductCard = ({ product }) => {
+  const {
+    name,
+    originalPrice,
+    discount,
+    discountedPrice,
+    rating,
+    images,
+    isBestSeller,
+    isTrending,
+  } = product;
+
+  const { pathname } = useLocation();
+
   return (
     <div
       className={
-        isProductListingCard
+        pathname === "/products"
           ? "product-listing-card card card-vertical"
           : "card card-vertical"
       }
