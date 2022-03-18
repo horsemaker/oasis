@@ -1,0 +1,23 @@
+.products-screen {
+  margin-top: 7.5rem;
+  scroll-margin-top: 7.5rem;
+  margin-bottom: 4rem;
+  padding: 0 5rem;
+  display: flex;
+  gap: 2rem;
+  position: relative;
+}
+
+@media screen and (max-width: 1200px) {
+  .products-screen {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .products-screen {
+    padding: 0;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+}
