@@ -11,7 +11,7 @@ const ProductCard = ({ product }) => {
     discountedPrice,
     rating,
     images,
-    isBestSeller,
+    isBestseller,
     isTrending,
   } = product;
 
@@ -51,7 +51,7 @@ const ProductCard = ({ product }) => {
           </button>
         </div>
       </div>
-      {isBestSeller && (
+      {isBestseller && (
         <div className="card-badge bestseller hl">Bestseller</div>
       )}
       {isTrending && <div className="card-badge trending hl">Trending</div>}
