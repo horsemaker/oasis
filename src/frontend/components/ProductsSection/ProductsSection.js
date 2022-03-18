@@ -6,7 +6,7 @@ const ProductsSection = ({ children, products }) => {
   return (
     <div className="products-section">
       <h1 className="h1-60">{children}</h1>
-      <div className="products">
+      <div className="products-carousel">
         {products.map(
           ({
             _id,

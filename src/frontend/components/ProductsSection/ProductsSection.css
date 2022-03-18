@@ -13,13 +13,13 @@
   background-color: var(--green-one-200);
 }
 
-.products {
+.products-carousel {
   display: flex;
   gap: 2rem;
 }
 
 @media screen and (max-width: 985px) {
-  .products {
+  .products-carousel {
     justify-content: center;
     flex-wrap: wrap;
   }
