@@ -12,19 +12,26 @@ const ProductCard = ({
   images,
   isBestSeller,
   isTrending,
+  isProductListingCard = false,
 }) => {
   return (
-    <div className="card card-vertical">
+    <div
+      className={
+        isProductListingCard
+          ? "product-listing-card card card-vertical"
+          : "card card-vertical"
+      }
+    >
       <img src={images[0]} alt={name} className="card-media" />
       <div className="card-primary">
         <h2 className="card-title">{name}</h2>
         <h3 className="card-subtitle">by Oasis</h3>
       </div>
       <Rating rating={rating} />
-      <div class="card-price">
-        <h4 class="card-price-discounted">₹{discountedPrice}</h4>
-        <small class="card-price-original">₹{originalPrice}</small>
-        <span class="card-discount">{discount}% Off</span>
+      <div className="card-price">
+        <h4 className="card-price-discounted">₹{discountedPrice}</h4>
+        <small className="card-price-original">₹{originalPrice}</small>
+        <span className="card-discount">{discount}% Off</span>
       </div>
       <div className="card-actions">
         <div className="card-action-buttons">

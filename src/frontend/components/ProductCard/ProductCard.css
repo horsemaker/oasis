@@ -32,6 +32,7 @@
 
 .card-price {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 0.5rem;
 }
@@ -43,4 +44,20 @@
 .card-discount {
   color: var(--teal);
   font-weight: var(--semi-bold);
+}
+
+.product-listing-card {
+  flex-basis: calc(33.3% - 1rem);
+}
+
+@media screen and (max-width: 800px) {
+  .product-listing-card {
+    flex-basis: calc(50% - 1rem);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .product-listing-card {
+    min-width: 100%;
+  }
 }
