@@ -1,3 +1,13 @@
+.home-screen {
+  margin-top: 7.5rem;
+  scroll-margin-top: 7.5rem;
+  margin-bottom: 4rem;
+  padding: 0 5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
 .featured-products {
   display: flex;
   flex-direction: column;
@@ -35,6 +45,13 @@
 }
 
 @media screen and (max-width: 580px) {
+  .home-screen {
+    padding: 0;
+    margin-top: 6rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
   .h1-60 {
     font-size: 3rem;
   }
@@ -42,4 +59,7 @@
   .floating-img {
     display: none;
   }
+}
+
+@media screen and (max-width: 580px) {
 }

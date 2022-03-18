@@ -1,0 +1,32 @@
+.filter-box {
+  flex-grow: 1;
+  flex-basis: calc(100% / 3);
+}
+
+.filter-checkbox-input {
+  position: absolute;
+  visibility: hidden;
+}
+
+.filter-checkbox-label {
+  cursor: pointer;
+  height: 100%;
+  border-radius: 5px;
+  padding: 0.75rem 0.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.filter-box:hover {
+  background-color: var(--green-one-100);
+}
+
+.filter-checkbox-input:checked ~ .filter-checkbox-label {
+  background-color: var(--green-one-200);
+}
+
+.filter-name {
+  text-transform: capitalize;
+}
