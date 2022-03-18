@@ -8,4 +8,5 @@ export { Rating } from "./Rating/Rating";
 export { Filters } from "./Filters/Filters";
 export { FilterCollection } from "./FilterCollection/FilterCollection";
 export { FilterBox } from "./FilterBox/FilterBox";
+export { RadioInput } from "./RadioInput/RadioInput";
 export { ProductListing } from "./ProductListing/ProductListing";
