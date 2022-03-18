@@ -1,1 +1,1 @@
-export { filterCollections } from "./filterCollections";
+export { filtersData } from "./filtersData";
