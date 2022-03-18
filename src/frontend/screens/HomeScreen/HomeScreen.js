@@ -7,7 +7,7 @@ function HomeScreen() {
   const { bestSellerProducts, trendingProducts } = useProducts();
 
   return (
-    <>
+    <div className="home-screen">
       <Banner />
       <div className="featured-products">
         <ProductsSection products={bestSellerProducts}>
@@ -17,7 +17,7 @@ function HomeScreen() {
           <span className="hl-green">Trending</span> Flora
         </ProductsSection>
       </div>
-    </>
+    </div>
   );
 }
 

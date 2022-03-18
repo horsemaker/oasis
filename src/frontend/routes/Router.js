@@ -13,18 +13,16 @@ import Mockman from "mockman-js";
 
 const Router = () => {
   return (
-    <main className="main-page">
-      <Routes>
-        <Route path="/" element={<HomeScreen />} />
-        <Route path="/about" element={<AboutUsScreen />} />
-        <Route path="/products" element={<ProductsScreen />} />
-        <Route path="/cart" element={<CartScreen />} />
-        <Route path="/wishlist" element={<WishlistScreen />} />
-        <Route path="/signin" element={<SignInScreen />} />
-        <Route path="/signup" element={<SignUpScreen />} />
-        <Route path="/mockman" element={<Mockman />} />
-      </Routes>
-    </main>
+    <Routes>
+      <Route path="/" element={<HomeScreen />} />
+      <Route path="/about" element={<AboutUsScreen />} />
+      <Route path="/products" element={<ProductsScreen />} />
+      <Route path="/cart" element={<CartScreen />} />
+      <Route path="/wishlist" element={<WishlistScreen />} />
+      <Route path="/signin" element={<SignInScreen />} />
+      <Route path="/signup" element={<SignUpScreen />} />
+      <Route path="/mockman" element={<Mockman />} />
+    </Routes>
   );
 };
 
