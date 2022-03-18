@@ -5,3 +5,7 @@ export { Banner } from "./Banner/Banner";
 export { ProductsSection } from "./ProductsSection/ProductsSection";
 export { ProductCard } from "./ProductCard/ProductCard";
 export { Rating } from "./Rating/Rating";
+export { Filters } from "./Filters/Filters";
+export { FilterCollection } from "./FilterCollection/FilterCollection";
+export { FilterBox } from "./FilterBox/FilterBox";
+export { ProductListing } from "./ProductListing/ProductListing";
