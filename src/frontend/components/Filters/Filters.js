@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { filterCollections } from "../../data";
+import { filtersData } from "../../data";
 import { FilterCollection } from "../FilterCollection/FilterCollection";
+import { RadioInput } from "../RadioInput/RadioInput";
 import "./Filters.css";
 
 const Filters = () => {
   const [showResponsiveFilters, setShowResponsiveFilters] = useState(false);
+  const { sortBys, ratings, collections } = filtersData;
 
   useEffect(() => {
     const checkResponsiveFilters = () => {
@@ -47,20 +49,11 @@ const Filters = () => {
         </div>
         <div className="filter">
           <p className="filter-heading">Sort By</p>
-          <div className="input-group input-radio">
-            <input type="radio" name="price" id="lowToHigh" />
-            <label htmlFor="lowToHigh">
-              <small>Price - Low to High</small>
-            </label>
-          </div>
-          <div className="input-group input-radio">
-            <input type="radio" name="price" id="highToLow" />
-            <label htmlFor="highToLow">
-              <small>Price - High to Low</small>
-            </label>
-          </div>
+          {sortBys.map((filterSortBy) => (
+            <RadioInput inputName="sortBys" inputLabel={filterSortBy} />
+          ))}
         </div>
-        {filterCollections.map((filterCollection) => (
+        {collections.map((filterCollection) => (
           <FilterCollection
             key={filterCollection.id}
             filterCollection={filterCollection}
@@ -68,24 +61,9 @@ const Filters = () => {
         ))}
         <div className="filter">
           <p className="filter-heading">Rating</p>
-          <div className="input-group input-radio">
-            <input type="radio" name="rating" id="4stars" />
-            <label htmlFor="4stars">
-              <small>4 Stars &amp; above</small>
-            </label>
-          </div>
-          <div className="input-group input-radio">
-            <input type="radio" name="rating" id="3stars" />
-            <label htmlFor="3stars">
-              <small>3 Stars &amp; above</small>
-            </label>
-          </div>
-          <div className="input-group input-radio">
-            <input type="radio" name="rating" id="2stars" />
-            <label htmlFor="2stars">
-              <small>2 Stars &amp; above</small>
-            </label>
-          </div>
+          {ratings.map((filterRating) => (
+            <RadioInput inputName="ratings" inputLabel={filterRating} />
+          ))}
         </div>
       </div>
     </>
