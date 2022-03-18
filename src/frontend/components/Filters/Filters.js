@@ -19,7 +19,11 @@ const Filters = () => {
     <>
       <div
         className="products-filter-responsive"
-        onClick={() => setShowResponsiveFilters(!showResponsiveFilters)}
+        onClick={() =>
+          setShowResponsiveFilters(
+            (showResponsiveFilters) => !showResponsiveFilters
+          )
+        }
       >
         <p className="filters-heading">Filter By</p>
         <span className="material-icons filter-toggle">
