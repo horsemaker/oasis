@@ -5,7 +5,6 @@ import "./Filters.css";
 
 const Filters = () => {
   const [showResponsiveFilters, setShowResponsiveFilters] = useState(false);
-  console.log(showResponsiveFilters);
 
   useEffect(() => {
     const checkResponsiveFilters = () => {
