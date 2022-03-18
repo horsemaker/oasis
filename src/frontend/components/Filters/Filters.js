@@ -50,7 +50,11 @@ const Filters = () => {
         <div className="filter">
           <p className="filter-heading">Sort By</p>
           {sortBys.map((filterSortBy) => (
-            <RadioInput inputName="sortBys" inputLabel={filterSortBy} />
+            <RadioInput
+              key={filterSortBy}
+              inputName="sortBys"
+              inputLabel={filterSortBy}
+            />
           ))}
         </div>
         {collections.map((filterCollection) => (
@@ -62,7 +66,11 @@ const Filters = () => {
         <div className="filter">
           <p className="filter-heading">Rating</p>
           {ratings.map((filterRating) => (
-            <RadioInput inputName="ratings" inputLabel={filterRating} />
+            <RadioInput
+              key={filterRating}
+              inputName="ratings"
+              inputLabel={filterRating}
+            />
           ))}
         </div>
       </div>
