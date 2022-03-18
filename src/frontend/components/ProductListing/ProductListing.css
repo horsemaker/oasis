@@ -1,0 +1,20 @@
+.product-listing {
+  flex-basis: 77.5%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-self: flex-start;
+}
+
+@media screen and (max-width: 1200px) {
+  .product-listing {
+    flex-basis: 100%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .product-listing {
+    flex-basis: unset;
+    align-items: center;
+  }
+}
