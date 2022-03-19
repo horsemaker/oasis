@@ -1,11 +1,11 @@
 import React from "react";
 
-const CheckboxInput = ({ inputName, inputLabel }) => {
+const Input = ({ inputName, inputLabel, inputType }) => {
   return (
-    <div className="input-group input-checkbox">
+    <div className="input-group input-radio">
       <input
         className="input-filter"
-        type="checkbox"
+        type={inputType}
         name={inputName}
         id={inputLabel}
       />
@@ -16,4 +16,4 @@ const CheckboxInput = ({ inputName, inputLabel }) => {
   );
 };
 
-export { CheckboxInput };
+export { Input };

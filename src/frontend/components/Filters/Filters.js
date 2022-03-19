@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useCategories } from "../../contexts";
 import { filtersData } from "../../data";
-import { CheckboxInput } from "../CheckboxInput/CheckboxInput";
 import { FilterCollection } from "../FilterCollection/FilterCollection";
-import { RadioInput } from "../RadioInput/RadioInput";
+import { Input } from "../Input/Input";
 import { RangeSlider } from "../RangeSlider/RangeSlider";
 import "./Filters.css";
 
@@ -53,11 +52,12 @@ const Filters = () => {
         </div>
         <div className="filter">
           <p className="filter-heading">Sort By</p>
-          {sortBys.map((filterSortBy) => (
-            <RadioInput
+          {sortBys.list.map((filterSortBy) => (
+            <Input
               key={filterSortBy}
               inputName="sortBys"
               inputLabel={filterSortBy}
+              inputType={sortBys.type}
             />
           ))}
         </div>
@@ -70,20 +70,22 @@ const Filters = () => {
         <div className="filter">
           <p className="filter-heading">Categories</p>
           {categoryNames.map((categoryName) => (
-            <CheckboxInput
+            <Input
               key={categoryName}
               inputName="categories"
               inputLabel={categoryName}
+              inputType="checkbox"
             />
           ))}
         </div>
         <div className="filter">
           <p className="filter-heading">Rating</p>
-          {ratings.map((filterRating) => (
-            <RadioInput
+          {ratings.list.map((filterRating) => (
+            <Input
               key={filterRating}
               inputName="ratings"
               inputLabel={filterRating}
+              inputType={ratings.type}
             />
           ))}
         </div>
