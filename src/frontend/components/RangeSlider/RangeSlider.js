@@ -13,11 +13,9 @@ const RangeSlider = ({ min, max, gap }) => {
     <div className="slider-wrapper">
       <div className="slider-input">
         <div className="slider-field">
-          {/* <span>Min</span> */}
           <span className="slider-field-value">₹{minVal}</span>
         </div>
         <div className="slider-field">
-          {/* <span>Max</span> */}
           <span className="slider-field-value">₹{maxVal}</span>
         </div>
       </div>
