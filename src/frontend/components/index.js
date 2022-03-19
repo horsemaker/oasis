@@ -8,6 +8,6 @@ export { Rating } from "./Rating/Rating";
 export { Filters } from "./Filters/Filters";
 export { FilterCollection } from "./FilterCollection/FilterCollection";
 export { FilterBox } from "./FilterBox/FilterBox";
-export { Input } from "./Input/Input";
 export { RangeSlider } from "./RangeSlider/RangeSlider";
+export { Input } from "./Input/Input";
 export { ProductListing } from "./ProductListing/ProductListing";
