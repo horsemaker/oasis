@@ -4,6 +4,7 @@ import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 import {
   CategoriesProvider,
+  FiltersProvider,
   NavbarProvider,
   ProductsProvider,
 } from "./frontend/contexts";
@@ -18,7 +19,9 @@ ReactDOM.render(
       <NavbarProvider>
         <ProductsProvider>
           <CategoriesProvider>
-            <App />
+            <FiltersProvider>
+              <App />
+            </FiltersProvider>
           </CategoriesProvider>
         </ProductsProvider>
       </NavbarProvider>
