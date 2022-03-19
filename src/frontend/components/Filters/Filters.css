@@ -39,6 +39,10 @@
   text-decoration: underline;
 }
 
+.input-filter {
+  accent-color: var(--teal);
+}
+
 @media screen and (max-width: 1200px) {
   .products-filter-responsive {
     cursor: pointer;

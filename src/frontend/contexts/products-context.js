@@ -32,6 +32,14 @@ const ProductsProvider = ({ children }) => {
   );
 };
 
-const useProducts = () => useContext(ProductsContext);
+const useProducts = () => {
+  const context = useContext(ProductsContext);
+
+  if (context === undefined) {
+    throw new Error("useProducts must be used within a ProductsProvider");
+  }
+
+  return context;
+};
 
 export { ProductsProvider, useProducts };
