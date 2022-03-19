@@ -1,12 +1,16 @@
 import React, { useState, useEffect } from "react";
+import { useCategories } from "../../contexts";
 import { filtersData } from "../../data";
+import { CheckboxInput } from "../CheckboxInput/CheckboxInput";
 import { FilterCollection } from "../FilterCollection/FilterCollection";
 import { RadioInput } from "../RadioInput/RadioInput";
+import { RangeSlider } from "../RangeSlider/RangeSlider";
 import "./Filters.css";
 
 const Filters = () => {
   const [showResponsiveFilters, setShowResponsiveFilters] = useState(false);
   const { sortBys, ratings, collections } = filtersData;
+  const { categoryNames } = useCategories();
 
   useEffect(() => {
     const checkResponsiveFilters = () => {
@@ -45,7 +49,7 @@ const Filters = () => {
         </div>
         <div className="filter">
           <p className="filter-heading">Price</p>
-          <input type="range" name="price" id="price" />
+          <RangeSlider min={2999} max={5999} gap={500} />
         </div>
         <div className="filter">
           <p className="filter-heading">Sort By</p>
@@ -63,6 +67,16 @@ const Filters = () => {
             filterCollection={filterCollection}
           />
         ))}
+        <div className="filter">
+          <p className="filter-heading">Categories</p>
+          {categoryNames.map((categoryName) => (
+            <CheckboxInput
+              key={categoryName}
+              inputName="categories"
+              inputLabel={categoryName}
+            />
+          ))}
+        </div>
         <div className="filter">
           <p className="filter-heading">Rating</p>
           {ratings.map((filterRating) => (
