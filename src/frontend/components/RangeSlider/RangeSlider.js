@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import "./RangeSlider.css";
 
 const RangeSlider = ({ min, max, gap }) => {
-  const [minVal, setMinVal] = useState(2999);
-  const [maxVal, setMaxVal] = useState(5999);
+  const [minVal, setMinVal] = useState(min);
+  const [maxVal, setMaxVal] = useState(max);
   const minMaxDiff = max - min;
 
-  const progressLeft = ((minVal - 2999) / minMaxDiff) * 100 + "%";
-  const progressRight = 100 - ((maxVal - 2999) / minMaxDiff) * 100 + "%";
+  const progressLeft = ((minVal - min) / minMaxDiff) * 100 + "%";
+  const progressRight = 100 - ((maxVal - min) / minMaxDiff) * 100 + "%";
 
   return (
     <div className="slider-wrapper">
@@ -29,12 +29,12 @@ const RangeSlider = ({ min, max, gap }) => {
           name="range-min"
           id="range-min"
           className="range-min"
-          min={2999}
-          max={5999}
+          min={min}
+          max={max}
           step={100}
           value={minVal}
           onChange={(e) => {
-            e.target.value >= 2999 &&
+            e.target.value >= min &&
               maxVal - e.target.value >= gap &&
               setMinVal(e.target.value);
           }}
@@ -44,20 +44,20 @@ const RangeSlider = ({ min, max, gap }) => {
           name="range-max"
           id="range-max"
           className="range-max"
-          min={2999}
-          max={5999}
+          min={min}
+          max={max}
           step={100}
           value={maxVal}
           onChange={(e) => {
-            e.target.value <= 5999 &&
+            e.target.value <= max &&
               e.target.value - minVal >= gap &&
               setMaxVal(e.target.value);
           }}
         />
       </div>
       <div className="slider-labels">
-        {[...Array(30).keys()].map(() => (
-          <span>|</span>
+        {[...Array(30).keys()].map((value) => (
+          <span key={value}>|</span>
         ))}
       </div>
     </div>
