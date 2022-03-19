@@ -35,6 +35,14 @@ const NavbarProvider = ({ children }) => {
   );
 };
 
-const useNavbar = () => useContext(NavbarContext);
+const useNavbar = () => {
+  const context = useContext(NavbarContext);
+
+  if (context === undefined) {
+    throw new Error("useNavbar must be used within a NavbarProvider");
+  }
+
+  return context;
+};
 
 export { NavbarProvider, useNavbar };

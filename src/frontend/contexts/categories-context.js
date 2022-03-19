@@ -5,7 +5,7 @@ const CategoriesContext = createContext();
 
 const CategoriesProvider = ({ children }) => {
   const [categories, setCategories] = useState([]);
-  
+
   const categoryNames = categories.map((category) => category.name);
 
   useEffect(() => {
@@ -26,6 +26,14 @@ const CategoriesProvider = ({ children }) => {
   );
 };
 
-const useCategories = () => useContext(CategoriesContext);
+const useCategories = () => {
+  const context = useContext(CategoriesContext);
+
+  if (context === undefined) {
+    throw new Error("useCategories must be used within a CategoriesProvider");
+  }
+
+  return context;
+};
 
 export { CategoriesProvider, useCategories };

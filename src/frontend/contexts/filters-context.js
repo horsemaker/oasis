@@ -27,6 +27,14 @@ const FiltersProvider = ({ children }) => {
   );
 };
 
-const useFilters = () => useContext(FiltersContext);
+const useFilters = () => {
+  const context = useContext(FiltersContext);
+
+  if (context === undefined) {
+    throw new Error("useFilters must be used within a FiltersProvider");
+  }
+
+  return context;
+};
 
 export { filtersInitialState, FiltersProvider, useFilters };
