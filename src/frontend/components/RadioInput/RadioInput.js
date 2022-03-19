@@ -1,11 +1,10 @@
 import React from "react";
-import "./RadioInput.css";
 
 const RadioInput = ({ inputName, inputLabel }) => {
   return (
     <div className="input-group input-radio">
       <input
-        className="input-radio"
+        className="input-filter"
         type="radio"
         name={inputName}
         id={inputLabel}
