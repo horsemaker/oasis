@@ -4,12 +4,14 @@ import { filtersReducer } from "../reducers";
 const FiltersContext = createContext();
 
 const filtersInitialState = {
-  minPrice: 2999,
+  minPrice: 2499,
   maxPrice: 5999,
   sortBy: "",
-  size: [],
-  sunlight: [],
-  maintenance: [],
+  collections: {
+    size: [],
+    sunlight: [],
+    maintenance: [],
+  },
   categories: [],
   rating: "",
 };
