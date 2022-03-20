@@ -1,7 +1,13 @@
 import React from "react";
 import "./FilterBox.css";
 
-const FilterBox = ({ heading, filterName, filterIcon }) => {
+const FilterBox = ({
+  heading,
+  filterName,
+  filterIcon,
+  filterChecked,
+  filterDispatch,
+}) => {
   return (
     <div className="filter-box">
       <input
@@ -9,6 +15,8 @@ const FilterBox = ({ heading, filterName, filterIcon }) => {
         type="checkbox"
         name={`${heading}-filter`}
         id={`${heading}-filter-${filterName}`}
+        checked={filterChecked}
+        onChange={filterDispatch}
       />
       <label
         className="filter-checkbox-label"

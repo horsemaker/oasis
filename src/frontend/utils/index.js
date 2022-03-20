@@ -1,0 +1,9 @@
+export { getFinalProducts } from "./getFinalProducts";
+export { getProductsInPriceRange } from "./getProductsInPriceRange";
+export { getProductsSorted } from "./getProductsSorted";
+export { getProductsOf } from "./getProductsOf";
+export { getProductsOfSize } from "./getProductsOfSize";
+export { getProductsOfSunlight } from "./getProductsOfSunlight";
+export { getProductsOfMaintenance } from "./getProductsOfMaintenance";
+export { getProductsOfCategories } from "./getProductsOfCategories";
+export { getProductsOfRating } from "./getProductsOfRating";

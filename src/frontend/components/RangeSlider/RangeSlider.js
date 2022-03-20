@@ -1,22 +1,26 @@
-import React, { useState } from "react";
+import React from "react";
+import { MAX_PRICE, MIN_PRICE } from "../../constants/filtersConstants";
+import { useFilters } from "../../contexts";
 import "./RangeSlider.css";
 
 const RangeSlider = ({ min, max, gap }) => {
-  const [minVal, setMinVal] = useState(min);
-  const [maxVal, setMaxVal] = useState(max);
+  const {
+    filters: { minPrice, maxPrice },
+    dispatchFilters,
+  } = useFilters();
   const minMaxDiff = max - min;
 
-  const progressLeft = ((minVal - min) / minMaxDiff) * 100 + "%";
-  const progressRight = 100 - ((maxVal - min) / minMaxDiff) * 100 + "%";
+  const progressLeft = ((minPrice - min) / minMaxDiff) * 100 + "%";
+  const progressRight = 100 - ((maxPrice - min) / minMaxDiff) * 100 + "%";
 
   return (
     <div className="slider-wrapper">
       <div className="slider-input">
         <div className="slider-field">
-          <span className="slider-field-value">₹{minVal}</span>
+          <span className="slider-field-value">₹{minPrice}</span>
         </div>
         <div className="slider-field">
-          <span className="slider-field-value">₹{maxVal}</span>
+          <span className="slider-field-value">₹{maxPrice}</span>
         </div>
       </div>
       <div className="slider-range">
@@ -32,11 +36,11 @@ const RangeSlider = ({ min, max, gap }) => {
           min={min}
           max={max}
           step={100}
-          value={minVal}
+          value={minPrice}
           onChange={(e) => {
             e.target.value >= min &&
-              maxVal - e.target.value >= gap &&
-              setMinVal(e.target.value);
+              maxPrice - e.target.value >= gap &&
+              dispatchFilters({ type: MIN_PRICE, payload: e.target.value });
           }}
         />
         <input
@@ -47,19 +51,19 @@ const RangeSlider = ({ min, max, gap }) => {
           min={min}
           max={max}
           step={100}
-          value={maxVal}
+          value={maxPrice}
           onChange={(e) => {
             e.target.value <= max &&
-              e.target.value - minVal >= gap &&
-              setMaxVal(e.target.value);
+              e.target.value - minPrice >= gap &&
+              dispatchFilters({ type: MAX_PRICE, payload: e.target.value });
           }}
         />
       </div>
-      <div className="slider-labels">
-        {[...Array(30).keys()].map((value) => (
-          <span key={value}>|</span>
+      <datalist className="slider-labels">
+        {[...Array(35).keys()].map((value) => (
+          <option key={value}>|</option>
         ))}
-      </div>
+      </datalist>
     </div>
   );
 };

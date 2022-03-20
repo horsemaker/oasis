@@ -1,10 +1,8 @@
 import React from "react";
-import { useProducts } from "../../contexts";
 import { ProductCard } from "../ProductCard/ProductCard";
 import "./ProductListing.css";
 
-const ProductListing = () => {
-  const { products } = useProducts();
+const ProductListing = ({ products }) => {
   return (
     <div className="product-listing">
       {products.map((product) => (
@@ -14,16 +12,6 @@ const ProductListing = () => {
           product={product}
         />
       ))}
-      {/* _id={_id}
-            name={name}
-            originalPrice={originalPrice}
-            discount={discount}
-            discountedPrice={discountedPrice}
-            rating={rating}
-            images={images}
-            isBestSeller={isBestseller}
-            isTrending={isTrending}
-            isProductListingCard={true} */}
     </div>
   );
 };
