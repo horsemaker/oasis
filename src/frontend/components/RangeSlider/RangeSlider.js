@@ -59,11 +59,11 @@ const RangeSlider = ({ min, max, gap }) => {
           }}
         />
       </div>
-      <div className="slider-labels">
+      <datalist className="slider-labels">
         {[...Array(35).keys()].map((value) => (
-          <span key={value}>|</span>
+          <option key={value}>|</option>
         ))}
-      </div>
+      </datalist>
     </div>
   );
 };
