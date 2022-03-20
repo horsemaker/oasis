@@ -16,17 +16,10 @@ const Filters = () => {
   const [showResponsiveFilters, setShowResponsiveFilters] = useState(false);
   const { sortBys, ratings, collections } = filtersData;
   const { categoryNames } = useCategories();
-  const { filters, dispatchFilters } = useFilters();
   const {
-    // minPrice,
-    // maxPrice,
-    sortBy,
-    // size,
-    // sunlight,
-    // maintenance,
-    categories,
-    rating,
-  } = filters;
+    filters: { sortBy, categories, rating },
+    dispatchFilters,
+  } = useFilters();
 
   useEffect(() => {
     const checkResponsiveFilters = () => {
@@ -69,7 +62,7 @@ const Filters = () => {
         </div>
         <div className="filter">
           <p className="filter-heading">Price</p>
-          <RangeSlider min={2999} max={5999} gap={500} />
+          <RangeSlider min={2499} max={5999} gap={500} />
         </div>
         <div className="filter">
           <p className="filter-heading">Sort By</p>
