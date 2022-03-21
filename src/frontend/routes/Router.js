@@ -28,7 +28,14 @@ const Router = () => {
           </PrivateRoute>
         }
       />
-      <Route path="/wishlist" element={<WishlistScreen />} />
+      <Route
+        path="/wishlist"
+        element={
+          <PrivateRoute>
+            <WishlistScreen />
+          </PrivateRoute>
+        }
+      />
       {!isAuth && (
         <>
           <Route path="/signin" element={<SignInScreen />} />
