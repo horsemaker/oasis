@@ -11,7 +11,7 @@ const Input = ({
   return (
     <div className="input-group input-radio">
       <input
-        className="input-filter"
+        className="oasis-input"
         type={inputType}
         name={inputName}
         id={inputLabel}
