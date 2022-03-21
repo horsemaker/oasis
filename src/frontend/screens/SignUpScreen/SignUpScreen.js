@@ -17,7 +17,7 @@ function SignUpScreen() {
     <div className="form-wrapper">
       <form
         className="form"
-        onSubmit={(e) => signupHandler(e.preventDefault, user)}
+        onSubmit={(e) => signupHandler(e, user)}
       >
         <h1>Sign Up</h1>
         <div className="input-group input-text">
