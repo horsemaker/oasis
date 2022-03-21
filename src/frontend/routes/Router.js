@@ -1,5 +1,7 @@
 import React from "react";
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
+import { PrivateRoute } from "../components";
+import { useAuth } from "../contexts";
 import {
   AboutUsScreen,
   CartScreen,
@@ -9,19 +11,31 @@ import {
   SignUpScreen,
   WishlistScreen,
 } from "../screens";
-import Mockman from "mockman-js";
 
 const Router = () => {
+  const { isAuth } = useAuth();
+
   return (
     <Routes>
       <Route path="/" element={<HomeScreen />} />
       <Route path="/about" element={<AboutUsScreen />} />
       <Route path="/products" element={<ProductsScreen />} />
-      <Route path="/cart" element={<CartScreen />} />
+      <Route
+        path="/cart"
+        element={
+          <PrivateRoute>
+            <CartScreen />
+          </PrivateRoute>
+        }
+      />
       <Route path="/wishlist" element={<WishlistScreen />} />
-      <Route path="/signin" element={<SignInScreen />} />
-      <Route path="/signup" element={<SignUpScreen />} />
-      <Route path="/mockman" element={<Mockman />} />
+      {!isAuth && (
+        <>
+          <Route path="/signin" element={<SignInScreen />} />
+          <Route path="/signup" element={<SignUpScreen />} />
+        </>
+      )}
+      <Route path="*" element={<Navigate replace to="/" />} />
     </Routes>
   );
 };
