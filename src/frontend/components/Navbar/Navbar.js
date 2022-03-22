@@ -6,7 +6,7 @@ import "./Navbar.css";
 
 function Navbar() {
   const { showNavbar, toggleNavbar } = useNavbar();
-  const { isAuth, signoutHandler } = useAuth();
+  const { auth, signoutHandler } = useAuth();
 
   return (
     <>
@@ -84,7 +84,7 @@ function Navbar() {
               <span className="material-icons navbar-icon">perm_identity</span>
               <ul className="dropdown-content list-simple list-cursor-pointer list-style-none">
                 <li>
-                  {isAuth ? (
+                  {auth.status ? (
                     <span className="navbar-link" onClick={signoutHandler}>
                       Sign Out
                     </span>

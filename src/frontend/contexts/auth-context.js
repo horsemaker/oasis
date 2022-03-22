@@ -4,12 +4,14 @@ import { useNavigate } from "react-router-dom";
 
 const AuthContext = createContext();
 
-const authInitialState = localStorage.getItem("authToken") ? true : false;
-
 const AuthProvider = ({ children }) => {
   const navigate = useNavigate();
 
-  const [isAuth, setIsAuth] = useState(authInitialState);
+  const [auth, setAuth] = useState({
+    status: localStorage.getItem("AUTH_TOKEN") ? true : false,
+    token: localStorage.getItem("AUTH_TOKEN"),
+  });
+  console.log("auth", auth);
 
   const signinHandler = async (e, user) => {
     e.preventDefault();
@@ -18,8 +20,12 @@ const AuthProvider = ({ children }) => {
         email: user.email,
         password: user.password,
       });
-      localStorage.setItem("authToken", response.data.encodedToken);
-      setIsAuth(true);
+      localStorage.setItem("AUTH_TOKEN", response.data.encodedToken);
+      setAuth({
+        ...auth,
+        status: true,
+        token: localStorage.getItem("AUTH_TOKEN"),
+      });
       navigate("/");
     } catch (error) {
       console.error(error);
@@ -32,11 +38,15 @@ const AuthProvider = ({ children }) => {
       const response = await axios.post(`/api/auth/signup`, {
         firstName: user.firstName,
         lastName: user.lastName,
-        email: user.name,
+        email: user.email,
         password: user.password,
       });
-      localStorage.setItem("authToken", response.data.encodedToken);
-      setIsAuth(true);
+      localStorage.setItem("AUTH_TOKEN", response.data.encodedToken);
+      setAuth({
+        ...auth,
+        status: true,
+        token: localStorage.getItem("AUTH_TOKEN"),
+      });
       navigate("/");
     } catch (error) {
       console.error(error);
@@ -44,15 +54,18 @@ const AuthProvider = ({ children }) => {
   };
 
   const signoutHandler = () => {
-    localStorage.removeItem("authToken");
-    setIsAuth(false);
+    localStorage.removeItem("AUTH_TOKEN");
+    setAuth({
+      ...auth,
+      status: false,
+      token: null,
+    });
   };
 
   return (
     <AuthContext.Provider
       value={{
-        isAuth,
-        setIsAuth,
+        auth,
         signinHandler,
         signupHandler,
         signoutHandler,

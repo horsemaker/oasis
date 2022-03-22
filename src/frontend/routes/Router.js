@@ -13,7 +13,9 @@ import {
 } from "../screens";
 
 const Router = () => {
-  const { isAuth } = useAuth();
+  const {
+    auth: { status },
+  } = useAuth();
 
   return (
     <Routes>
@@ -36,7 +38,7 @@ const Router = () => {
           </PrivateRoute>
         }
       />
-      {!isAuth && (
+      {!status && (
         <>
           <Route path="/signin" element={<SignInScreen />} />
           <Route path="/signup" element={<SignUpScreen />} />
