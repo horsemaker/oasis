@@ -5,6 +5,7 @@ const ProductsContext = createContext();
 
 const ProductsProvider = ({ children }) => {
   const [products, setProducts] = useState([]);
+
   const bestSellerProducts = products.filter(
     ({ isBestseller }) => isBestseller
   );
