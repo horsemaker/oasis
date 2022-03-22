@@ -1,6 +1,4 @@
 import { useState, createContext, useContext } from "react";
-import axios from "axios";
-
 const AuthContext = createContext();
 
 const AuthProvider = ({ children }) => {
@@ -9,62 +7,11 @@ const AuthProvider = ({ children }) => {
     token: localStorage.getItem("AUTH_TOKEN"),
   });
 
-  const signinHandler = async (e, user) => {
-    e.preventDefault();
-    try {
-      const response = await axios.post("/api/auth/login", {
-        email: user.email,
-        password: user.password,
-      });
-      localStorage.setItem("AUTH_TOKEN", response.data.encodedToken);
-      setAuth({
-        ...auth,
-        status: true,
-        token: localStorage.getItem("AUTH_TOKEN"),
-      });
-      // navigate("/");
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
-  const signupHandler = async (e, user) => {
-    e.preventDefault();
-    try {
-      const response = await axios.post(`/api/auth/signup`, {
-        firstName: user.firstName,
-        lastName: user.lastName,
-        email: user.email,
-        password: user.password,
-      });
-      localStorage.setItem("AUTH_TOKEN", response.data.encodedToken);
-      setAuth({
-        ...auth,
-        status: true,
-        token: localStorage.getItem("AUTH_TOKEN"),
-      });
-      // navigate("/");
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
-  const signoutHandler = () => {
-    localStorage.removeItem("AUTH_TOKEN");
-    setAuth({
-      ...auth,
-      status: false,
-      token: null,
-    });
-  };
-
   return (
     <AuthContext.Provider
       value={{
         auth,
-        signinHandler,
-        signupHandler,
-        signoutHandler,
+        setAuth,
       }}
     >
       {children}

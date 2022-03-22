@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../contexts";
+import { signInHandler } from "./../../services/auth-services";
 
 function SignInScreen() {
   const [user, setUser] = useState({
@@ -8,11 +9,18 @@ function SignInScreen() {
     password: "",
   });
 
-  const { signinHandler } = useAuth();
+  const { setAuth } = useAuth();
+  const navigate = useNavigate();
 
   return (
     <div className="form-wrapper">
-      <form className="form" onSubmit={(e) => signinHandler(e, user)}>
+      <form
+        className="form"
+        onSubmit={(e) => {
+          e.preventDefault();
+          signInHandler(user, setAuth, navigate);
+        }}
+      >
         <h1>Sign In</h1>
         <div className="input-group input-email">
           <label htmlFor="form-email">Email*</label>
@@ -57,12 +65,17 @@ function SignInScreen() {
           <button
             type="button"
             className="btn btn-teal-secondary btn-auth"
-            onClick={(e) =>
-              signinHandler(e, {
-                email: "adarshbalika@gmail.com",
-                password: "adarshbalika",
-              })
-            }
+            onClick={(e) => {
+              e.preventDefault();
+              signInHandler(
+                {
+                  email: "adarshbalika@gmail.com",
+                  password: "adarshbalika",
+                },
+                setAuth,
+                navigate
+              );
+            }}
           >
             Sign In as a Guest
           </button>

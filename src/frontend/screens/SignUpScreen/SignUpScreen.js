@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../contexts";
+import { signUpHandler } from "../../services/auth-services";
 
 function SignUpScreen() {
   const [user, setUser] = useState({
@@ -11,13 +12,17 @@ function SignUpScreen() {
     confirmPassword: "",
   });
 
-  const { signupHandler } = useAuth();
+  const { setAuth } = useAuth();
+  const navigate = useNavigate();
 
   return (
     <div className="form-wrapper">
       <form
         className="form"
-        onSubmit={(e) => signupHandler(e, user)}
+        onSubmit={(e) => {
+          e.preventDefault();
+          signUpHandler(user, setAuth, navigate);
+        }}
       >
         <h1>Sign Up</h1>
         <div className="input-group input-text">
