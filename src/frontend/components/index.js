@@ -12,3 +12,4 @@ export { RangeSlider } from "./RangeSlider/RangeSlider";
 export { Input } from "./Input/Input";
 export { ProductListing } from "./ProductListing/ProductListing";
 export { PrivateRoute } from "./PrivateRoute/PrivateRoute";
+export { WishlistProductCard } from "./WishlistProductCard/WishlistProductCard";
