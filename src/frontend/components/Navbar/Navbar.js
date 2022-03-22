@@ -111,14 +111,16 @@ function Navbar() {
                     }
                     to="/wishlist"
                   >
-                    <span class="badge">
-                      Wishlist
-                      {wishlist.length !== 0 && (
+                    {wishlist.length > 0 ? (
+                      <span class="badge dropdown-badge">
+                        Wishlist
                         <span class="badge-content badge-small badge-right dropdown-badge-right badge-color">
                           {wishlist.length}
                         </span>
-                      )}
-                    </span>
+                      </span>
+                    ) : (
+                      "Wishlist"
+                    )}
                   </NavLink>
                 </li>
               </ul>
