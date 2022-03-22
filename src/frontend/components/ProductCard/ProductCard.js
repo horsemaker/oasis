@@ -1,10 +1,12 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
+import { useWishlist } from "../../contexts";
 import { Rating } from "../Rating/Rating";
 import "./ProductCard.css";
 
 const ProductCard = ({ product }) => {
   const {
+    _id,
     name,
     originalPrice,
     discount,
@@ -16,6 +18,8 @@ const ProductCard = ({ product }) => {
   } = product;
 
   const { pathname } = useLocation();
+
+  const { wishlist, moveToWishlist, removeFromWishlist } = useWishlist();
 
   return (
     <div
@@ -43,9 +47,21 @@ const ProductCard = ({ product }) => {
           </button>
         </div>
         <div className="card-action-icons">
-          <button className="card-action-icon top-right">
-            <span className="material-icons"> favorite_border </span>
-          </button>
+          {wishlist.find((wishlistProduct) => wishlistProduct._id === _id) ? (
+            <button
+              className="card-action-icon top-right"
+              onClick={() => removeFromWishlist(product)}
+            >
+              <span className="material-icons favorite-icon"> favorite </span>
+            </button>
+          ) : (
+            <button
+              className="card-action-icon top-right"
+              onClick={() => moveToWishlist(product)}
+            >
+              <span className="material-icons"> favorite_border </span>
+            </button>
+          )}
           <button className="card-action-icon">
             <span className="material-icons"> share </span>
           </button>
