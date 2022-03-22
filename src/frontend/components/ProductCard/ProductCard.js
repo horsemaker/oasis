@@ -38,7 +38,7 @@ const ProductCard = ({ product }) => {
       </div>
       <div className="card-actions">
         <div className="card-action-buttons">
-          <button className="btn btn-primary-sloid btn-teal">
+          <button className="btn btn-primary-sloid btn-teal btn-card">
             Add To Cart
           </button>
         </div>

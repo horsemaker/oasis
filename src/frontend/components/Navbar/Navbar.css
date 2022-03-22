@@ -80,13 +80,14 @@
 }
 
 .dropdown-content {
+  min-width: 5.5rem;
   background-color: var(--color-background);
   color: var(--color-foreground);
   border-color: var(--green-one-500);
   padding: 0;
   display: none;
   top: 105%;
-  left: -100%;
+  left: -115%;
   position: absolute;
   text-align: center;
   font-weight: var(--semi-bold);

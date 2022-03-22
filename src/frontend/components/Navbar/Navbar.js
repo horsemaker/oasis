@@ -1,11 +1,12 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { useNavbar } from "../../contexts";
+import { useAuth, useNavbar } from "../../contexts";
 import { ResponsiveNavbar } from "../ResponsiveNavbar/ResponsiveNavbar";
 import "./Navbar.css";
 
 function Navbar() {
   const { showNavbar, toggleNavbar } = useNavbar();
+  const { isAuth, signoutHandler } = useAuth();
 
   return (
     <>
@@ -83,14 +84,20 @@ function Navbar() {
               <span className="material-icons navbar-icon">perm_identity</span>
               <ul className="dropdown-content list-simple list-cursor-pointer list-style-none">
                 <li>
-                  <NavLink
-                    className={({ isActive }) =>
-                      isActive ? "navbar-link-active" : "navbar-link"
-                    }
-                    to="/signin"
-                  >
-                    Sign In
-                  </NavLink>
+                  {isAuth ? (
+                    <span className="navbar-link" onClick={signoutHandler}>
+                      Sign Out
+                    </span>
+                  ) : (
+                    <NavLink
+                      className={({ isActive }) =>
+                        isActive ? "navbar-link-active" : "navbar-link"
+                      }
+                      to="/signin"
+                    >
+                      Sign In
+                    </NavLink>
+                  )}
                 </li>
                 <li>
                   <NavLink

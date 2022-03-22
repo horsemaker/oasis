@@ -132,8 +132,72 @@
   max-width: max-content;
 }
 
+.btn-disabled {
+  cursor: not-allowed;
+}
+
 .btn-teal {
   background-color: var(--teal);
   color: var(--color-background);
 }
+
+.btn-teal-secondary {
+  color: var(--teal);
+  border: 1px solid var(--teal);
+}
 /* Buttons */
+
+/* Oasis Input */
+.oasis-input {
+  accent-color: var(--teal);
+}
+/* Oasis Input */
+
+/* Auth Forms */
+.form-wrapper {
+  margin-top: 7.5rem;
+  scroll-margin-top: 7.5rem;
+  margin-bottom: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-img-section {
+  margin-top: -5rem;
+  width: 40rem;
+  position: relative;
+}
+
+.form {
+  padding: 2.5rem 2rem;
+  flex-basis: 20rem;
+  background-color: #fefefe;
+  border: none;
+  box-shadow: #63636333 0px 2px 8px 0px;
+}
+
+.auth-link-message {
+  font-size: var(--14-px);
+}
+
+.auth-link {
+  border-bottom: 1px solid;
+  color: var(--teal);
+}
+
+input[type="email"]:valid {
+  background-color: transparent;
+}
+
+.btn-auth {
+  max-width: none;
+  width: 100%;
+}
+
+@media screen and (max-width: 1200px) {
+  .form-img {
+    display: none;
+  }
+}
+/* Auth Forms */
