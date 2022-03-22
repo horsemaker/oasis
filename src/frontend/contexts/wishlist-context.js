@@ -26,32 +26,8 @@ const WishlistProvider = ({ children }) => {
     }
   }, [auth]);
 
-  const moveToWishlist = async (product) => {
-    const { data } = await axios.post(
-      "/api/user/wishlist",
-      { product },
-      {
-        headers: {
-          authorization: auth.token,
-        },
-      }
-    );
-    setWishlist(data.wishlist);
-  };
-
-  const removeFromWishlist = async (product) => {
-    const { data } = await axios.delete(`/api/user/wishlist/${product._id}`, {
-      headers: {
-        authorization: auth.token,
-      },
-    });
-    setWishlist(data.wishlist);
-  };
-
   return (
-    <WishlistContext.Provider
-      value={{ wishlist, moveToWishlist, removeFromWishlist }}
-    >
+    <WishlistContext.Provider value={{ wishlist, setWishlist }}>
       {children}
     </WishlistContext.Provider>
   );
@@ -59,6 +35,11 @@ const WishlistProvider = ({ children }) => {
 
 const useWishlist = () => {
   const context = useContext(WishlistContext);
+
+  if (context === undefined) {
+    throw new Error("useWishlist must be used within a WishlistProvider");
+  }
+
   return context;
 };
 

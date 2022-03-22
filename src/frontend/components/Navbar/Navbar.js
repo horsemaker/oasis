@@ -1,12 +1,14 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { useAuth, useNavbar } from "../../contexts";
+import { useAuth, useNavbar, useWishlist } from "../../contexts";
 import { ResponsiveNavbar } from "../ResponsiveNavbar/ResponsiveNavbar";
+import { signOutHandler } from "./../../services/auth-services";
 import "./Navbar.css";
 
 function Navbar() {
   const { showNavbar, toggleNavbar } = useNavbar();
-  const { auth, signoutHandler } = useAuth();
+  const { auth, setAuth } = useAuth();
+  const { wishlist } = useWishlist();
 
   return (
     <>
@@ -74,7 +76,7 @@ function Navbar() {
                   <span className="material-icons navbar-icon">
                     shopping_cart
                   </span>
-                  <span className="badge-content badge-small badge-color badge-right">
+                  <span className="badge-content badge-small badge-color badge-right ">
                     3
                   </span>
                 </span>
@@ -85,7 +87,10 @@ function Navbar() {
               <ul className="dropdown-content list-simple list-cursor-pointer list-style-none">
                 <li>
                   {auth.status ? (
-                    <span className="navbar-link" onClick={signoutHandler}>
+                    <span
+                      className="navbar-link"
+                      onClick={() => signOutHandler(setAuth)}
+                    >
                       Sign Out
                     </span>
                   ) : (
@@ -106,7 +111,14 @@ function Navbar() {
                     }
                     to="/wishlist"
                   >
-                    Wishlist
+                    <span class="badge">
+                      Wishlist
+                      {wishlist.length !== 0 && (
+                        <span class="badge-content badge-small badge-right dropdown-badge-right badge-color">
+                          {wishlist.length}
+                        </span>
+                      )}
+                    </span>
                   </NavLink>
                 </li>
               </ul>

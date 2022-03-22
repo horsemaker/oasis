@@ -1,6 +1,7 @@
 import React from "react";
-import { useWishlist } from "../../contexts";
+import { useAuth, useWishlist } from "../../contexts";
 import "./WishlistProductCard.css";
+import { removeFromWishlist } from "./../../services/wishlist-services";
 
 const WishlistProductCard = ({ product }) => {
   const {
@@ -12,7 +13,8 @@ const WishlistProductCard = ({ product }) => {
     images,
   } = product;
 
-  const { removeFromWishlist } = useWishlist();
+  const { auth } = useAuth();
+  const { setWishlist } = useWishlist();
 
   return (
     <div className="card card-horizontal wishlist-card-horizontal">
@@ -37,7 +39,9 @@ const WishlistProductCard = ({ product }) => {
           <div className="card-action-icons">
             <button
               className="card-action-icon top-left"
-              onClick={() => removeFromWishlist(product)}
+              onClick={() =>
+                removeFromWishlist(auth.token, product._id, setWishlist)
+              }
             >
               <span className="material-icons favorite-icon"> favorite </span>
             </button>
@@ -46,7 +50,7 @@ const WishlistProductCard = ({ product }) => {
       </div>
       <span
         className="material-icons delete-icon"
-        onClick={() => removeFromWishlist(product)}
+        onClick={() => removeFromWishlist(auth.token, product._id, setWishlist)}
       >
         delete
       </span>
