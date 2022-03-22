@@ -8,6 +8,7 @@ import {
   FiltersProvider,
   NavbarProvider,
   ProductsProvider,
+  WishlistProvider,
 } from "./frontend/contexts";
 // import Mockman from "mockman-js";
 import { makeServer } from "./server";
@@ -23,7 +24,9 @@ ReactDOM.render(
           <ProductsProvider>
             <CategoriesProvider>
               <FiltersProvider>
-                <App />
+                <WishlistProvider>
+                  <App />
+                </WishlistProvider>
               </FiltersProvider>
             </CategoriesProvider>
           </ProductsProvider>
