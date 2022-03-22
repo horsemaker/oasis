@@ -130,6 +130,11 @@
   background-color: var(--color-foreground);
 }
 
+.dropdown-badge-right {
+  right: -2px;
+  top: 0;
+}
+
 @media screen and (max-width: 786px) {
   .navbar {
     justify-content: space-between;
