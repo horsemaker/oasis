@@ -38,10 +38,15 @@ const Router = () => {
           </PrivateRoute>
         }
       />
-      {!status && (
+      {!status ? (
         <>
           <Route path="/signin" element={<SignInScreen />} />
           <Route path="/signup" element={<SignUpScreen />} />
+        </>
+      ) : (
+        <>
+          <Route path="/signin" element={<Navigate replace to="/" />} />
+          <Route path="/signup" element={<Navigate replace to="/" />} />
         </>
       )}
       <Route path="*" element={<Navigate replace to="/" />} />

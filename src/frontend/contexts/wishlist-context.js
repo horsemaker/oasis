@@ -8,11 +8,9 @@ const WishlistProvider = ({ children }) => {
   const { auth } = useAuth();
 
   const [wishlist, setWishlist] = useState([]);
-  console.log("wishlist", wishlist);
 
   useEffect(() => {
     if (auth.status) {
-      console.log("wishlist if");
       (async () => {
         try {
           const { data } = await axios.get("/api/user/wishlist", {
@@ -24,7 +22,6 @@ const WishlistProvider = ({ children }) => {
         } catch {}
       })();
     } else {
-      console.log("wishlist else");
       setWishlist([]);
     }
   }, [auth]);

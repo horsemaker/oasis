@@ -1,17 +1,13 @@
 import { useState, createContext, useContext } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
 
 const AuthContext = createContext();
 
 const AuthProvider = ({ children }) => {
-  const navigate = useNavigate();
-
   const [auth, setAuth] = useState({
     status: localStorage.getItem("AUTH_TOKEN") ? true : false,
     token: localStorage.getItem("AUTH_TOKEN"),
   });
-  console.log("auth", auth);
 
   const signinHandler = async (e, user) => {
     e.preventDefault();
@@ -26,7 +22,7 @@ const AuthProvider = ({ children }) => {
         status: true,
         token: localStorage.getItem("AUTH_TOKEN"),
       });
-      navigate("/");
+      // navigate("/");
     } catch (error) {
       console.error(error);
     }
@@ -47,7 +43,7 @@ const AuthProvider = ({ children }) => {
         status: true,
         token: localStorage.getItem("AUTH_TOKEN"),
       });
-      navigate("/");
+      // navigate("/");
     } catch (error) {
       console.error(error);
     }
