@@ -1,6 +1,6 @@
 import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { useAuth, useWishlist } from "../../contexts";
+import { useAuth, useCart, useWishlist } from "../../contexts";
 import { Rating } from "../Rating/Rating";
 import "./ProductCard.css";
 
@@ -23,6 +23,7 @@ const ProductCard = ({ product }) => {
   const { auth } = useAuth();
   const { wishlist, moveProductToWishlist, removeProductFromWishlist } =
     useWishlist();
+  const { cart, addProductToCart } = useCart();
 
   return (
     <div
@@ -45,9 +46,28 @@ const ProductCard = ({ product }) => {
       </div>
       <div className="card-actions">
         <div className="card-action-buttons">
-          <button className="btn btn-primary-sloid btn-teal btn-card">
-            Add To Cart
-          </button>
+          {cart.find((cartProduct) => cartProduct._id === _id) ? (
+            <button
+              className="btn btn-icon btn-teal btn-card"
+              onClick={() => navigate("/cart")}
+            >
+              <span className="material-icons">shopping_cart</span>
+              Go To Cart
+            </button>
+          ) : (
+            <button
+              className="btn btn-primary-sloid btn-teal btn-card"
+              onClick={() => {
+                if (auth.status) {
+                  addProductToCart(product);
+                } else {
+                  navigate("/signin");
+                }
+              }}
+            >
+              Add To Cart
+            </button>
+          )}
         </div>
         <div className="card-action-icons">
           {wishlist.find((wishlistProduct) => wishlistProduct._id === _id) ? (
