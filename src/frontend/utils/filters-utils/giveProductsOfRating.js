@@ -1,4 +1,4 @@
-export const getProductsOfRating = (products, rating) => {
+export const giveProductsOfRating = (products, rating) => {
   switch (rating) {
     case "4 Stars & above":
       return products.filter(({ rating }) => rating >= 4);

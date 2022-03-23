@@ -1,2 +1,7 @@
+export { getProductsService } from "./products-services";
 export { signInService, signUpService } from "./auth-services";
-export { moveToWishlist, removeFromWishlist } from "./wishlist-services";
+export {
+  getWishlistService,
+  moveProductToWishlistService,
+  removeProductFromWishlistService,
+} from "./wishlist-services";

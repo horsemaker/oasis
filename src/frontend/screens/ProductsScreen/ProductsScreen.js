@@ -1,13 +1,13 @@
 import React from "react";
 import { Filters, ProductListing } from "../../components";
 import { useFilters, useProducts } from "../../contexts";
-import { getFinalProducts } from "../../utils";
+import { giveFinalProducts } from "../../utils";
 import "./ProductsScreen.css";
 
 function ProductsScreen() {
   const { products } = useProducts();
   const { filters } = useFilters();
-  const finalProducts = getFinalProducts(products, filters);
+  const finalProducts = giveFinalProducts(products, filters);
 
   return (
     <div className="products-screen">

@@ -1,10 +1,12 @@
 import { useState, createContext, useContext } from "react";
+import { AUTH_TOKEN } from "./../constants/authConstants";
+
 const AuthContext = createContext();
 
 const AuthProvider = ({ children }) => {
   const [auth, setAuth] = useState({
-    status: localStorage.getItem("AUTH_TOKEN") ? true : false,
-    token: localStorage.getItem("AUTH_TOKEN"),
+    status: localStorage.getItem(AUTH_TOKEN) ? true : false,
+    token: localStorage.getItem(AUTH_TOKEN),
   });
 
   return (

@@ -1,10 +1,6 @@
 import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useAuth, useWishlist } from "../../contexts";
-import {
-  moveToWishlist,
-  removeFromWishlist,
-} from "../../services/wishlist-services";
 import { Rating } from "../Rating/Rating";
 import "./ProductCard.css";
 
@@ -25,7 +21,8 @@ const ProductCard = ({ product }) => {
   const navigate = useNavigate();
 
   const { auth } = useAuth();
-  const { wishlist, setWishlist } = useWishlist();
+  const { wishlist, moveProductToWishlist, removeProductFromWishlist } =
+    useWishlist();
 
   return (
     <div
@@ -56,9 +53,7 @@ const ProductCard = ({ product }) => {
           {wishlist.find((wishlistProduct) => wishlistProduct._id === _id) ? (
             <button
               className="card-action-icon top-right"
-              onClick={() =>
-                removeFromWishlist(auth.token, product._id, setWishlist)
-              }
+              onClick={() => removeProductFromWishlist(product._id)}
             >
               <span className="material-icons favorite-icon"> favorite </span>
             </button>
@@ -67,7 +62,7 @@ const ProductCard = ({ product }) => {
               className="card-action-icon top-right"
               onClick={() => {
                 if (auth.status) {
-                  moveToWishlist(auth.token, product, setWishlist);
+                  moveProductToWishlist(product);
                 } else {
                   navigate("/signin");
                 }
