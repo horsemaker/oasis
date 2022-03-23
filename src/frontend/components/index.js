@@ -13,3 +13,5 @@ export { Input } from "./Input/Input";
 export { ProductListing } from "./ProductListing/ProductListing";
 export { PrivateRoute } from "./PrivateRoute/PrivateRoute";
 export { WishlistProductCard } from "./WishlistProductCard/WishlistProductCard";
+export { CartProductCard } from "./CartProductCard/CartProductCard";
+export { CartSummary } from "./CartSummary/CartSummary";
