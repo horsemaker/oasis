@@ -1,0 +1,61 @@
+.cart-checkout {
+  min-width: 20rem;
+  position: sticky;
+  top: 7.5rem;
+  align-self: flex-start;
+  background-color: #fefefe;
+  border-radius: 5px;
+  padding: 1rem;
+  box-shadow: #63636333 0px 1px 4px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.btn-checkout {
+  max-width: none;
+}
+
+.checkout-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.checkout-list-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.checkout-price {
+  font-weight: var(--semi-bold);
+}
+
+.checkout-discount {
+  color: var(--teal);
+  font-weight: var(--semi-bold);
+}
+
+.checkout-delivery {
+  font-weight: var(--semi-bold);
+}
+
+.checkout-amount {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.checkout-amount > p {
+  font-size: var(--22-px);
+  font-weight: var(--semi-bold);
+}
+
+@media screen and (max-width: 1200px) {
+  .cart-checkout {
+    width: 60%;
+    position: static;
+    align-self: center;
+    order: -1;
+  }
+}
