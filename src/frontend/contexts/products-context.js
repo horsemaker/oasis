@@ -1,5 +1,5 @@
 import { useState, useEffect, createContext, useContext } from "react";
-import axios from "axios";
+import { getProductsService } from "../services";
 
 const ProductsContext = createContext();
 
@@ -14,11 +14,9 @@ const ProductsProvider = ({ children }) => {
 
   useEffect(() => {
     (async () => {
-      try {
-        const { data } = await axios.get("/api/products");
-        setProducts(data.products);
-      } catch (err) {
-        console.error(err.message);
+      const getProductsResponse = await getProductsService();
+      if (getProductsResponse !== undefined) {
+        setProducts(getProductsResponse);
       }
     })();
   }, []);

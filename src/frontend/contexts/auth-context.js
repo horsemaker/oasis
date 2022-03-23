@@ -1,61 +1,19 @@
 import { useState, createContext, useContext } from "react";
-import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { AUTH_TOKEN } from "./../constants/authConstants";
 
 const AuthContext = createContext();
 
-const authInitialState = localStorage.getItem("authToken") ? true : false;
-
 const AuthProvider = ({ children }) => {
-  const navigate = useNavigate();
-
-  const [isAuth, setIsAuth] = useState(authInitialState);
-
-  const signinHandler = async (e, user) => {
-    e.preventDefault();
-    try {
-      const response = await axios.post("/api/auth/login", {
-        email: user.email,
-        password: user.password,
-      });
-      localStorage.setItem("authToken", response.data.encodedToken);
-      setIsAuth(true);
-      navigate("/");
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
-  const signupHandler = async (e, user) => {
-    e.preventDefault();
-    try {
-      const response = await axios.post(`/api/auth/signup`, {
-        firstName: user.firstName,
-        lastName: user.lastName,
-        email: user.name,
-        password: user.password,
-      });
-      localStorage.setItem("authToken", response.data.encodedToken);
-      setIsAuth(true);
-      navigate("/");
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
-  const signoutHandler = () => {
-    localStorage.removeItem("authToken");
-    setIsAuth(false);
-  };
+  const [auth, setAuth] = useState({
+    status: localStorage.getItem(AUTH_TOKEN) ? true : false,
+    token: localStorage.getItem(AUTH_TOKEN),
+  });
 
   return (
     <AuthContext.Provider
       value={{
-        isAuth,
-        setIsAuth,
-        signinHandler,
-        signupHandler,
-        signoutHandler,
+        auth,
+        setAuth,
       }}
     >
       {children}

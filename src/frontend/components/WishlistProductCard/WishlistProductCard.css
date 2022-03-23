@@ -1,0 +1,65 @@
+.wishlist-card-horizontal {
+  max-width: none;
+  width: 50rem;
+}
+
+.wishlist-card-horizontal .card-media {
+  width: 27.5%;
+}
+
+.card-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1; /* number of lines to show */
+  line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.wishlist-card-desc {
+  width: 100%;
+  max-width: 30rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* number of lines to show */
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.wishlist-card-actions {
+  margin-bottom: 1rem;
+}
+
+.wishlist-card-horizontal .card-action-buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+.delete-icon {
+  align-self: flex-start;
+  color: var(--color-accents-five);
+}
+
+.delete-icon:hover {
+  color: var(--color-foreground);
+}
+
+@media screen and (max-width: 900px) {
+  .wishlist-card-horizontal {
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 786px) {
+  .wishlist-card-desc {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .wishlist-card-horizontal .card-media {
+    width: 57.5%;
+  }
+}

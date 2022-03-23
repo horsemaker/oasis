@@ -1,4 +1,4 @@
-export const getProductsOfCategories = (products, categories) => {
+export const giveProductsOfCategories = (products, categories) => {
   if (categories.length === 0) return products;
 
   return products.filter(

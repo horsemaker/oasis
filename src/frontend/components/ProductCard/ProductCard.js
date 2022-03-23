@@ -1,10 +1,12 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import { useAuth, useWishlist } from "../../contexts";
 import { Rating } from "../Rating/Rating";
 import "./ProductCard.css";
 
 const ProductCard = ({ product }) => {
   const {
+    _id,
     name,
     originalPrice,
     discount,
@@ -16,6 +18,11 @@ const ProductCard = ({ product }) => {
   } = product;
 
   const { pathname } = useLocation();
+  const navigate = useNavigate();
+
+  const { auth } = useAuth();
+  const { wishlist, moveProductToWishlist, removeProductFromWishlist } =
+    useWishlist();
 
   return (
     <div
@@ -43,9 +50,27 @@ const ProductCard = ({ product }) => {
           </button>
         </div>
         <div className="card-action-icons">
-          <button className="card-action-icon top-right">
-            <span className="material-icons"> favorite_border </span>
-          </button>
+          {wishlist.find((wishlistProduct) => wishlistProduct._id === _id) ? (
+            <button
+              className="card-action-icon top-right"
+              onClick={() => removeProductFromWishlist(product._id)}
+            >
+              <span className="material-icons favorite-icon"> favorite </span>
+            </button>
+          ) : (
+            <button
+              className="card-action-icon top-right"
+              onClick={() => {
+                if (auth.status) {
+                  moveProductToWishlist(product);
+                } else {
+                  navigate("/signin");
+                }
+              }}
+            >
+              <span className="material-icons"> favorite_border </span>
+            </button>
+          )}
           <button className="card-action-icon">
             <span className="material-icons"> share </span>
           </button>

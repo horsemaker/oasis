@@ -1,0 +1,9 @@
+export { giveFinalProducts } from "./giveFinalProducts";
+export { giveProductsInPriceRange } from "./giveProductsInPriceRange";
+export { giveProductsSorted } from "./giveProductsSorted";
+export { giveProductsOf } from "./giveProductsOf";
+export { giveProductsOfSize } from "./giveProductsOfSize";
+export { giveProductsOfSunlight } from "./giveProductsOfSunlight";
+export { giveProductsOfMaintenance } from "./giveProductsOfMaintenance";
+export { giveProductsOfCategories } from "./giveProductsOfCategories";
+export { giveProductsOfRating } from "./giveProductsOfRating";

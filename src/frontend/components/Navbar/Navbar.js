@@ -1,12 +1,23 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { useAuth, useNavbar } from "../../contexts";
+import { AUTH_TOKEN } from "../../constants/authConstants";
+import { useAuth, useNavbar, useWishlist } from "../../contexts";
 import { ResponsiveNavbar } from "../ResponsiveNavbar/ResponsiveNavbar";
 import "./Navbar.css";
 
 function Navbar() {
   const { showNavbar, toggleNavbar } = useNavbar();
-  const { isAuth, signoutHandler } = useAuth();
+  const { auth, setAuth } = useAuth();
+  const { wishlist } = useWishlist();
+
+  const signOutHandler = (setAuth) => {
+    localStorage.removeItem(AUTH_TOKEN);
+    setAuth((auth) => ({
+      ...auth,
+      status: false,
+      token: null,
+    }));
+  };
 
   return (
     <>
@@ -74,7 +85,7 @@ function Navbar() {
                   <span className="material-icons navbar-icon">
                     shopping_cart
                   </span>
-                  <span className="badge-content badge-small badge-color badge-right">
+                  <span className="badge-content badge-small badge-color badge-right ">
                     3
                   </span>
                 </span>
@@ -84,8 +95,11 @@ function Navbar() {
               <span className="material-icons navbar-icon">perm_identity</span>
               <ul className="dropdown-content list-simple list-cursor-pointer list-style-none">
                 <li>
-                  {isAuth ? (
-                    <span className="navbar-link" onClick={signoutHandler}>
+                  {auth.status ? (
+                    <span
+                      className="navbar-link"
+                      onClick={() => signOutHandler(setAuth)}
+                    >
                       Sign Out
                     </span>
                   ) : (
@@ -106,7 +120,16 @@ function Navbar() {
                     }
                     to="/wishlist"
                   >
-                    Wishlist
+                    {wishlist.length > 0 ? (
+                      <span className="badge dropdown-badge">
+                        Wishlist
+                        <span className="badge-content badge-small badge-right dropdown-badge-right badge-color">
+                          {wishlist.length}
+                        </span>
+                      </span>
+                    ) : (
+                      "Wishlist"
+                    )}
                   </NavLink>
                 </li>
               </ul>
