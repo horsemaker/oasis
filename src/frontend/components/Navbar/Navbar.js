@@ -1,14 +1,23 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { AUTH_TOKEN } from "../../constants/authConstants";
 import { useAuth, useNavbar, useWishlist } from "../../contexts";
 import { ResponsiveNavbar } from "../ResponsiveNavbar/ResponsiveNavbar";
-import { signOutHandler } from "./../../services/auth-services";
 import "./Navbar.css";
 
 function Navbar() {
   const { showNavbar, toggleNavbar } = useNavbar();
   const { auth, setAuth } = useAuth();
   const { wishlist } = useWishlist();
+
+  const signOutHandler = (setAuth) => {
+    localStorage.removeItem(AUTH_TOKEN);
+    setAuth((auth) => ({
+      ...auth,
+      status: false,
+      token: null,
+    }));
+  };
 
   return (
     <>
@@ -112,9 +121,9 @@ function Navbar() {
                     to="/wishlist"
                   >
                     {wishlist.length > 0 ? (
-                      <span class="badge dropdown-badge">
+                      <span className="badge dropdown-badge">
                         Wishlist
-                        <span class="badge-content badge-small badge-right dropdown-badge-right badge-color">
+                        <span className="badge-content badge-small badge-right dropdown-badge-right badge-color">
                           {wishlist.length}
                         </span>
                       </span>

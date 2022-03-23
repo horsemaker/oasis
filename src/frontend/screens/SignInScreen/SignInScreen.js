@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { AUTH_TOKEN } from "../../constants/authConstants";
 import { useAuth } from "../../contexts";
-import { signInHandler } from "./../../services/auth-services";
+import { signInService } from "../../services";
 
 function SignInScreen() {
   const [user, setUser] = useState({
@@ -11,6 +12,19 @@ function SignInScreen() {
 
   const { setAuth } = useAuth();
   const navigate = useNavigate();
+
+  const signInHandler = async (user) => {
+    const authToken = await signInService(user);
+    if (authToken !== undefined) {
+      localStorage.setItem(AUTH_TOKEN, authToken);
+      setAuth((auth) => ({
+        ...auth,
+        status: true,
+        token: authToken,
+      }));
+      navigate("/");
+    }
+  };
 
   return (
     <div className="form-wrapper">
