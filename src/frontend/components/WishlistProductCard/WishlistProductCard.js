@@ -4,7 +4,6 @@ import "./WishlistProductCard.css";
 
 const WishlistProductCard = ({ product }) => {
   const {
-    _id,
     name,
     description,
     originalPrice,
