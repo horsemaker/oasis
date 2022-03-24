@@ -1,5 +1,5 @@
 import React from "react";
-import { useWishlist } from "../../contexts";
+import { useCart, useWishlist } from "../../contexts";
 import "./WishlistProductCard.css";
 
 const WishlistProductCard = ({ product }) => {
@@ -13,6 +13,15 @@ const WishlistProductCard = ({ product }) => {
   } = product;
 
   const { removeProductFromWishlist } = useWishlist();
+  const { cart, addProductToCart, updateQuantityOfProductInCart } = useCart();
+
+  const addToCartHandler = (product) => {
+    if (cart.find((cartProduct) => cartProduct._id === product._id)) {
+      updateQuantityOfProductInCart(product._id, "increment");
+    } else {
+      addProductToCart(product);
+    }
+  };
 
   return (
     <div className="card card-horizontal wishlist-card-horizontal">
@@ -32,7 +41,12 @@ const WishlistProductCard = ({ product }) => {
         </div>
         <div className="card-actions wishlist-card-actions">
           <div className="card-action-buttons">
-            <button className="btn btn-teal">Add To Cart</button>
+            <button
+              className="btn btn-teal"
+              onClick={() => addToCartHandler(product)}
+            >
+              Add To Cart
+            </button>
           </div>
           <div className="card-action-icons">
             <button

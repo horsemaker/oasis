@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { AUTH_TOKEN } from "../../constants/authConstants";
-import { useAuth, useNavbar, useWishlist } from "../../contexts";
+import { useAuth, useCart, useNavbar, useWishlist } from "../../contexts";
 import { ResponsiveNavbar } from "../ResponsiveNavbar/ResponsiveNavbar";
 import "./Navbar.css";
 
@@ -9,6 +9,9 @@ function Navbar() {
   const { showNavbar, toggleNavbar } = useNavbar();
   const { auth, setAuth } = useAuth();
   const { wishlist } = useWishlist();
+  const {
+    cartSummary: { cartTotalProducts },
+  } = useCart();
 
   const signOutHandler = (setAuth) => {
     localStorage.removeItem(AUTH_TOKEN);
@@ -85,9 +88,11 @@ function Navbar() {
                   <span className="material-icons navbar-icon">
                     shopping_cart
                   </span>
-                  <span className="badge-content badge-small badge-color badge-right ">
-                    3
-                  </span>
+                  {cartTotalProducts !== 0 && (
+                    <span className="badge-content badge-small badge-color badge-right ">
+                      {cartTotalProducts}
+                    </span>
+                  )}
                 </span>
               </NavLink>
             </span>

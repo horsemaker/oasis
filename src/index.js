@@ -4,6 +4,7 @@ import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 import {
   AuthProvider,
+  CartProvider,
   CategoriesProvider,
   FiltersProvider,
   NavbarProvider,
@@ -25,7 +26,9 @@ ReactDOM.render(
             <CategoriesProvider>
               <FiltersProvider>
                 <WishlistProvider>
-                  <App />
+                  <CartProvider>
+                    <App />
+                  </CartProvider>
                 </WishlistProvider>
               </FiltersProvider>
             </CategoriesProvider>
