@@ -31,13 +31,11 @@ const CartProductCard = ({ product }) => {
               <button className="btn btn-float cart-btn-float">
                 <span
                   className="material-icons"
-                  onClick={() => {
-                    if (qty === 1) {
-                      removeProductFromCart(_id);
-                    } else {
-                      updateQuantityOfProductInCart(_id, "decrement");
-                    }
-                  }}
+                  onClick={() =>
+                    qty === 1
+                      ? removeProductFromCart(_id)
+                      : updateQuantityOfProductInCart(_id, "decrement")
+                  }
                 >
                   remove
                 </span>

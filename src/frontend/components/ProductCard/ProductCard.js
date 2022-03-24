@@ -57,13 +57,9 @@ const ProductCard = ({ product }) => {
           ) : (
             <button
               className="btn btn-primary-sloid btn-teal btn-card"
-              onClick={() => {
-                if (auth.status) {
-                  addProductToCart(product);
-                } else {
-                  navigate("/signin");
-                }
-              }}
+              onClick={() =>
+                auth.status ? addProductToCart(product) : navigate("/signin")
+              }
             >
               Add To Cart
             </button>
