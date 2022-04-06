@@ -14,6 +14,12 @@
   gap: 4rem;
 }
 
+.plants-section {
+  display: flex;
+  flex-direction: column;
+  gap: 5vh;
+}
+
 .floating-img-div {
   width: 6rem;
   position: absolute;
@@ -44,6 +50,12 @@
   }
 }
 
+@media screen and (max-width: 850px) {
+  .plants-section {
+    display: none;
+  }
+}
+
 @media screen and (max-width: 580px) {
   .home-screen {
     padding: 0;
@@ -59,7 +71,4 @@
   .floating-img {
     display: none;
   }
-}
-
-@media screen and (max-width: 580px) {
 }

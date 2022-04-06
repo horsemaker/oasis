@@ -1,6 +1,6 @@
 import "./HomeScreen.css";
 import React from "react";
-import { Banner, ProductsSection } from "../../components";
+import { Banner, PlantsSections, ProductsSection } from "../../components";
 import { useProducts } from "../../contexts";
 
 function HomeScreen() {
@@ -16,6 +16,9 @@ function HomeScreen() {
         <ProductsSection products={trendingProducts}>
           <span className="hl-green">Trending</span> Flora
         </ProductsSection>
+      </div>
+      <div class="plants-section">
+        <PlantsSections />
       </div>
     </div>
   );

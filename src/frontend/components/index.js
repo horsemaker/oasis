@@ -3,6 +3,7 @@ export { ResponsiveNavbar } from "./ResponsiveNavbar/ResponsiveNavbar";
 export { Footer } from "./Footer/Footer";
 export { Banner } from "./Banner/Banner";
 export { ProductsSection } from "./ProductsSection/ProductsSection";
+export { PlantsSections } from "./PlantsSections/PlantsSections";
 export { ProductCard } from "./ProductCard/ProductCard";
 export { Rating } from "./Rating/Rating";
 export { Filters } from "./Filters/Filters";
