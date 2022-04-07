@@ -2,15 +2,23 @@
 
 Oasis is your friendly neighborhood online nursery. We know that there’s just something magical about owning and caring for plants. We're here to bring your oasis to your doorstep.
 
-## Demo
+# Demo
 
 ## Link
 
 [oasiss.netlify.app](https://oasiss.netlify.app/)
 
+## Flow
+
+https://user-images.githubusercontent.com/60985700/162220492-99a0eddf-4b3e-4344-bd74-e7c154c2dd0c.mp4
+
 ## Home Screen
 
 https://user-images.githubusercontent.com/60985700/162217688-b4016fc2-9464-431f-8741-af5758384d3a.mp4
+
+## Products Screen
+
+https://user-images.githubusercontent.com/60985700/162219299-81a71d55-3afe-4fdd-9df8-c05f8d323adb.mp4
 
 ## Features
 
