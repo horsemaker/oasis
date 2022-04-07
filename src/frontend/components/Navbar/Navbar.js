@@ -13,7 +13,7 @@ function Navbar() {
     cartSummary: { cartTotalProducts },
   } = useCart();
 
-  const signOutHandler = (setAuth) => {
+  const signOutHandler = () => {
     localStorage.removeItem(AUTH_TOKEN);
     setAuth((auth) => ({
       ...auth,
@@ -103,7 +103,7 @@ function Navbar() {
                   {auth.status ? (
                     <span
                       className="navbar-link"
-                      onClick={() => signOutHandler(setAuth)}
+                      onClick={signOutHandler}
                     >
                       Sign Out
                     </span>
